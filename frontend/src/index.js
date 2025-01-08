@@ -1,5 +1,4 @@
 
-    // Constants for DOM elements
 const ELEMENTS = {
   buttons: {
     tombol1: document.getElementById('tombol1'),
@@ -14,31 +13,57 @@ const ELEMENTS = {
       card1: document.getElementById('card-title-1'),
       card2: document.getElementById('card-title-2'),
       card3: document.getElementById('card-title-3')
+    },
+    // Add references to image elements
+    images: {
+      img1: document.getElementById('card-img-1'),
+      img2: document.getElementById('card-img-2'),
+      img3: document.getElementById('card-img-3')
     }
   }
 };
 
-// Content configuration for each tab
+// Content configuration for each tab including image URLs
 const TAB_CONTENT = {
   tombol1: {
     title: 'Transformasi Senyum Anda dengan Bedah Mulut',
     description: 'Experience the life-changing power of a new smile.',
-    cards: ['Challenges', 'Shoppable Stories', 'In-app Messages']
+    cards: ['Walkthroughs', 'Coachmark', 'In-app Messages'],
+    images: [
+      'test1.png',
+      'test.png',
+      'test2.png'
+    ]
   },
   tombol2: {
-    title: 'User Engagement',
+    title: 'Kawat Gigi',
     description: 'Increase user engagement and stickiness with customizable loyalty programs, interactive stories, and more.',
-    cards: ['Loyalty Program', 'Streaks', 'Stories']
+    cards: ['Loyalty Program', 'Streaks', 'Stories'],
+    images: [
+      'path/to/kawat-gigi-1.jpg',
+      'path/to/kawat-gigi-2.jpg',
+      'path/to/kawat-gigi-3.jpg'
+    ]
   },
   tombol3: {
-    title: 'Activation and Feature Adoption',
+    title: 'Perawatan Gigi',
     description: 'Improve feature adoption and simplify the user onboarding process using walkthroughs, coachmark, and in-line widgets.',
-    cards: ['Walkthroughs', 'Coachmark', 'In-line Widget & Cards']
+    cards: ['Walkthroughs', 'Coachmark', 'In-line Widget & Cards'],
+    images: [
+      'path/to/perawatan-1.jpg',
+      'path/to/perawatan-2.jpg',
+      'path/to/perawatan-3.jpg'
+    ]
   },
   tombol4: {
-    title: 'User Research and Insights',
+    title: 'Pembersihan Gigi',
     description: 'Unlock actionable insights into user preferences to understand why users churn and ship user-informed products using surveys and polls.',
-    cards: ['Surveys', 'Quizzes', 'Polls']
+    cards: ['Surveys', 'Quizzes', 'Polls'],
+    images: [
+      'path/to/pembersihan-1.jpg',
+      'path/to/pembersihan-2.jpg',
+      'path/to/pembersihan-3.jpg'
+    ]
   }
 };
 
@@ -46,22 +71,22 @@ const TAB_CONTENT = {
 function updateButtonStyles(activeButton) {
   Object.values(ELEMENTS.buttons).forEach(button => {
     if (button === activeButton) {
-      // Tombol yang aktif
-      button.style.background = 'linear-gradient(to right, #5f2ff8, #f2f1ff)'; // Gradient biru
-      button.style.color = '#ffffff'; // Teks putih
-      button.style.transition = 'all 0.3s ease'; // Animasi transisi
+      button.style.background = 'linear-gradient(to right, #5f2ff8, #f2f1ff)';
+      button.style.color = '#ffffff';
+      button.style.transition = 'all 0.3s ease';
     } else {
-      // Tombol tidak aktif
-      button.style.background = 'white'; // Gradient hitam
-      button.style.color = 'black'; // Teks abu-abu
-      button.style.transition = 'all 0.3s ease'; // Animasi transisi
+      button.style.background = 'white';
+      button.style.color = 'black';
+      button.style.transition = 'all 0.3s ease';
     }
   });
 }
 
-// Function to update content
+// Function to update content including images
 function updateContent(contentKey) {
   const content = TAB_CONTENT[contentKey];
+  
+  // Update text content
   ELEMENTS.content.title.innerHTML = content.title;
   ELEMENTS.content.paragraf.innerHTML = content.description;
   
@@ -70,6 +95,23 @@ function updateContent(contentKey) {
   content.cards.forEach((cardTitle, index) => {
     if (cardElements[index]) {
       cardElements[index].innerHTML = cardTitle;
+    }
+  });
+  
+  // Update images
+  const imageElements = Object.values(ELEMENTS.content.images);
+  content.images.forEach((imageUrl, index) => {
+    if (imageElements[index]) {
+      imageElements[index].src = imageUrl;
+      
+      // Add fade transition effect
+      imageElements[index].style.opacity = '0';
+      imageElements[index].style.transition = 'opacity 0.3s ease';
+      
+      // Fade in the new image
+      setTimeout(() => {
+        imageElements[index].style.opacity = '1';
+      }, 50);
     }
   });
 }
