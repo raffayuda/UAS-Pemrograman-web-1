@@ -633,24 +633,16 @@ video {
   margin-bottom: 1rem;
 }
 
+.mt-40 {
+  margin-top: 10rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-52 {
-  margin-top: 13rem;
-}
-
-.mt-40 {
-  margin-top: 10rem;
 }
 
 .block {
@@ -788,14 +780,6 @@ video {
   border-top-right-radius: 0.5rem;
 }
 
-.border {
-  border-width: 1px;
-}
-
-.border-4 {
-  border-width: 4px;
-}
-
 .border-2 {
   border-width: 2px;
 }
@@ -809,19 +793,9 @@ video {
   border-color: rgb(242 241 255 / var(--tw-border-opacity, 1));
 }
 
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
-}
-
 .border-purple {
   --tw-border-opacity: 1;
   border-color: rgb(95 47 248 / var(--tw-border-opacity, 1));
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
 .bg-purple {
@@ -858,9 +832,8 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), #5f2ff8 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
-.via-white {
-  --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #ffffff var(--tw-gradient-via-position), var(--tw-gradient-to);
+.to-blue {
+  --tw-gradient-to: #f2f1ff var(--tw-gradient-to-position);
 }
 
 .to-gradient {
@@ -873,14 +846,6 @@ video {
 
 .to-white {
   --tw-gradient-to: #ffffff var(--tw-gradient-to-position);
-}
-
-.to-purple {
-  --tw-gradient-to: #5f2ff8 var(--tw-gradient-to-position);
-}
-
-.to-blue {
-  --tw-gradient-to: #f2f1ff var(--tw-gradient-to-position);
 }
 
 .bg-clip-text {
@@ -1131,8 +1096,8 @@ video {
     line-height: 2.5rem;
   }
 
-  .md\:text-6xl {
-    font-size: 3.75rem;
+  .md\:text-5xl {
+    font-size: 3rem;
     line-height: 1;
   }
 
@@ -1140,20 +1105,10 @@ video {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
 }
 
 @media (min-width: 1024px) {
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 }
