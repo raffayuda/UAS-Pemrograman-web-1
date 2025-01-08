@@ -21,8 +21,8 @@ const ELEMENTS = {
 // Content configuration for each tab
 const TAB_CONTENT = {
   tombol1: {
-    title: 'Conversion and Monetization',
-    description: 'Drive higher conversions with personalized challenges and contextual in-app messages to drive higher revenues and lifetime value.',
+    title: 'Transformasi Senyum Anda dengan Bedah Mulut',
+    description: 'Experience the life-changing power of a new smile.',
     cards: ['Challenges', 'Shoppable Stories', 'In-app Messages']
   },
   tombol2: {
@@ -45,7 +45,17 @@ const TAB_CONTENT = {
 // Function to update button styles
 function updateButtonStyles(activeButton) {
   Object.values(ELEMENTS.buttons).forEach(button => {
-    button.style.background = button === activeButton ? 'blue' : 'black';
+    if (button === activeButton) {
+      // Tombol yang aktif
+      button.style.background = 'linear-gradient(to right, #5f2ff8, #f2f1ff)'; // Gradient biru
+      button.style.color = '#ffffff'; // Teks putih
+      button.style.transition = 'all 0.3s ease'; // Animasi transisi
+    } else {
+      // Tombol tidak aktif
+      button.style.background = 'white'; // Gradient hitam
+      button.style.color = 'black'; // Teks abu-abu
+      button.style.transition = 'all 0.3s ease'; // Animasi transisi
+    }
   });
 }
 
@@ -83,3 +93,22 @@ const mobileMenu = document.querySelector('.mobile-menu');
 menuButton.addEventListener('click', function() {
   mobileMenu.classList.toggle('active');
 });
+
+
+// Ubah teks
+const teksElement = document.getElementById('change-teks');
+    const teksArray = ['Untuk senyum Anda', 'Kunjungi kami sekarang!', 'Dengan teknologi terkini'];
+    let index = 0;
+
+    function ubahTeks() {
+      teksElement.textContent = teksArray[index];
+      index++;
+
+      // Jika index melebihi batas array, reset ke 0
+      if (index >= teksArray.length) {
+        index = 0;
+      }
+    }
+
+    // Jalankan fungsi setiap 2 detik (sesuaikan dengan kebutuhan)
+    setInterval(ubahTeks, 2000);
