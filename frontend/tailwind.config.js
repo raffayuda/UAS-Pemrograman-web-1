@@ -5,7 +5,14 @@ module.exports = {
     "./pages/**/*.{html,js}",
   ],
   theme: {
-    colors: {
+    fontFamily: {
+      'caveat': ['Caveat', 'sans-serif'],
+      'geist': ['Geist', 'sans-serif'],
+      'playfair': ['Playfair Display', 'serif'],
+      'roboto': ['Roboto', 'sans-serif']
+    },
+    extend: {
+      colors: {
       'transparent': 'transparent',
       'black': '#000000',
       'white': '#ffffff',
@@ -13,15 +20,10 @@ module.exports = {
       'gradient': '#cec7ff',
       'purple': '#5f2ff8',
       'orange': '#ed7634',
-      'card-purple': '#bfacfc'
+      'card-purple': '#bfacfc',
+      'card-pink': '#ffc9af'
     },
-    fontFamily: {
-      'caveat': ['Caveat', 'sans-serif'],
-      'geist': ['Geist', 'sans-serif'],
-      'playfair': ['Playfair Display', 'serif'],
-      'roboto': ['Roboto', 'sans-serif']
-    },
-    extend: {},
+  },
   },
   plugins: [],
 }
