@@ -10,9 +10,63 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@400..700&family=Geist:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
+    <title></title>
+    <style>
+      .mobile-menu.active {
+        max-height: 400px; /* Sesuaikan dengan kebutuhan */
+      }
+    </style>
 </head>
 
 <body>
+  <nav class="fixed top-0 left-0 right-0 backdrop-blur-md bg-white/70 shadow-lg z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-7">
+          <div>
+            <!-- Website Logo -->
+            <a href="#" class="flex items-center py-4">
+              <span class="font-semibold text-gray-500 text-lg">Logo</span>
+            </a>
+          </div>
+          <!-- Primary Navbar items -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#" class="py-4 px-2 text-blue-500 border-b-4 border-blue-500 font-semibold">Home</a>
+            <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Services</a>
+            <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">About</a>
+            <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Contact Us</a>
+          </div>
+        </div>
+        <!-- Secondary Navbar items -->
+        <div class="hidden md:flex items-center space-x-3">
+          <a href="#" class="py-2 px-4 text-gray-500 font-medium hover:text-blue-500 transition duration-300">Login</a>
+          <a href="#" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-400 transition duration-300">Signup</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button class="outline-none mobile-menu-button" id="menuButton">
+            <svg class="w-6 h-6 text-gray-500 hover:text-blue-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+      <ul class="pt-4 pb-3">
+        <li><a href="#" class="block text-sm px-4 py-4 text-white bg-blue-500 font-semibold transition-all duration-300">Home</a></li>
+        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300">Services</a></li>
+        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300">About</a></li>
+        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300">Contact Us</a></li>
+        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300">Login</a></li>
+        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Spacer untuk menghindari konten tertutup navbar -->
+  <div class="h-20"></div>
   <div class="container w-[95%] mx-auto">
     <div
       class="hero flex md:items-center md:justify-center flex-wrap bg-gradient-to-r from-blue to-gradient p-10 rounded-lg m-10">

@@ -71,3 +71,15 @@ Object.entries(ELEMENTS.buttons).forEach(([key, button]) => {
     updateContent(key);
   });
 });
+
+
+
+// Navbar
+
+
+const menuButton = document.getElementById('menuButton');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+menuButton.addEventListener('click', function() {
+  mobileMenu.classList.toggle('active');
+});
