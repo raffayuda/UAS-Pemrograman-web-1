@@ -1725,6 +1725,10 @@ video {
     position: relative;
   }
 
+  .md\:top-44 {
+    top: 11rem;
+  }
+
   .md\:mt-10 {
     margin-top: 2.5rem;
   }
