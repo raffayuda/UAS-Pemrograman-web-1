@@ -459,8 +459,78 @@
         </div>
       </div>
     </section>
+
+
+    <section id="booking" class="mx-auto my-16 mb-32 w-full">
+      <div class="container p-5 w-full bg-card-purple rounded-lg pb-40 relative">
+        <div class="text">
+          <h1 class="text-center font-bold text-4xl mb-10 text-white">Daftarkan Jadwal Anda</h1>
+          <p class="text-lg text-white text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptatem facere blanditiis eaque corporis tenetur voluptate ducimus ratione earum. Blanditiis!
+          </p>
+        </div>
+        <div class="form rounded-xl p-5 w-full md:w-[50%] left-1/2 transform -translate-x-1/2 absolute bg-white top-44 shadow-lg">
+          <div class="border-b-2 pb-3 mb-5">
+            <h1 class="text-2xl font-bold text-gray-800">Isi form untuk mendaftar di klinik kami 😊</h1>
+          </div>
+          <div class="form-control space-y-4">
+            <div class="flex gap-2">
+              <div class="w-full">
+                <div>
+                  <label for="nama" class="block font-medium text-gray-700">Nama Lengkap</label>
+                  <input id="nama" type="text" placeholder="Nama Lengkap" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
+                <div>
+                  <label for="telepon" class="block font-medium text-gray-700">No Telepon</label>
+                  <input id="telepon" type="text" placeholder="Nomor Telepon" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
+                <div>
+              </div>
+                <label for="email" class="block font-medium text-gray-700">Alamat Email</label>
+                <input id="email" type="email" placeholder="Alamat Email" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+              </div>
+              <div class="w-full">
+                <div>
+                  <label for="tanggal" class="block font-medium text-gray-700">Tanggal Kunjungan</label>
+                  <input id="tanggal" type="date" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
+                <div>
+                  <label for="waktu" class="block font-medium text-gray-700">Waktu Kunjungan</label>
+                  <select id="waktu" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    <option value="">Pilih Waktu</option>
+                    <option value="08:00">08:00 - 10:00</option>
+                    <option value="10:00">10:00 - 12:00</option>
+                    <option value="13:00">13:00 - 15:00</option>
+                    <option value="15:00">15:00 - 17:00</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="jenis" class="block font-medium text-gray-700">Jenis Perawatan</label>
+                  <select id="jenis" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    <option value="">Pilih Perawatan</option>
+                    <option value="konsultasi">Konsultasi</option>
+                    <option value="tambal">Tambal Gigi</option>
+                    <option value="cabut">Cabut Gigi</option>
+                    <option value="pembersihan">Pembersihan Gigi</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="catatan" class="block font-medium text-gray-700">Catatan Tambahan</label>
+              <textarea id="catatan" placeholder="Masukkan catatan tambahan jika ada" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+            </div>
+            <div class="text-center mt-5">
+              <button class="bg-blue-500 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-600 transition">Kirim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
-    <section id="FAQ" class="mx-auto my-16 mb-32 w-full">
+    
+
+    <section id="FAQ" class="mx-auto my-16 mt-96 mb-32 w-full">
       <div class="container p-5 w-full">
           <div class="bg-purple p-5 w-full rounded-lg text-white">
               <div class="mb-10">
@@ -621,6 +691,10 @@
 </section>
     
   </div>
+  
+  <section id="footer" class="bg-black p-5">
+
+  </section>
 
   <script src="../src/index.js"></script>
   <script src="../src/carousel.js"></script>
