@@ -5,12 +5,7 @@ module.exports = {
     "./pages/**/*.{html,js}",
   ],
   theme: {
-    fontFamily: {
-      'caveat': ['Caveat', 'sans-serif'],
-      'geist': ['Geist', 'sans-serif'],
-      'playfair': ['Playfair Display', 'serif'],
-      'roboto': ['Roboto', 'sans-serif']
-    },
+    
     extend: {
       colors: {
       'transparent': 'transparent',
@@ -22,6 +17,12 @@ module.exports = {
       'orange': '#ed7634',
       'card-purple': '#bfacfc',
       'card-pink': '#ffc9af'
+    },
+    fontFamily: {
+      'caveat': ['Caveat', 'sans-serif'],
+      'geist': ['Geist', 'sans-serif'],
+      'playfair': ['Playfair Display', 'serif'],
+      'roboto': ['Roboto', 'sans-serif']
     },
   },
   },

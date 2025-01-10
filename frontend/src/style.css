@@ -1,0 +1,87 @@
+
+      .mobile-menu.active {
+        max-height: 400px; /* Sesuaikan dengan kebutuhan */
+      }
+      /* Custom button styles */
+      .custom-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(59, 130, 246, 0.9);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            z-index: 10;
+        }
+
+        .custom-nav-button:hover {
+            background-color: rgba(37, 99, 235, 1);
+        }
+
+        .custom-prev {
+            left: -25px;
+        }
+
+        .custom-next {
+            right: -25px;
+        }
+
+        /* Hide default nav buttons */
+        .owl-nav {
+            display: none;
+        }
+
+        /* Custom dots style */
+        .owl-dots {
+            margin-top: 20px;
+        }
+
+        .owl-dot span {
+            background: #CBD5E0 !important;
+            transition: all 0.3s ease;
+        }
+
+        .owl-dot.active span {
+            background: #3B82F6 !important;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .custom-nav-button {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .custom-prev {
+                left: -20px;
+            }
+
+            .custom-next {
+                right: -20px;
+            }
+        }
+
+
+/* Faq */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.rotate-icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.border-active {
+    border-color: #ffffff;
+}

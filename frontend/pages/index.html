@@ -5,20 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@400..700&family=Geist:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="../src/style.css">
     <title></title>
-    <style>
-      .mobile-menu.active {
-        max-height: 400px; /* Sesuaikan dengan kebutuhan */
-      }
-    </style>
+    
 </head>
 
-<body>
+<body class="font-geist">
   <nav class="fixed top-0 left-0 right-0 backdrop-blur-md bg-white/70 shadow-lg z-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex justify-between">
@@ -205,201 +210,343 @@
     </section>
 
 
-    <section id="dokter" class="mt-32">
-      <h1 class="text-2xl md:text-4xl font-bold text-center mb-10">Dokter Unggulan Kami</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Dokter 1 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div class="relative">
-                <img
-                    src="https://placehold.co/300x300"
-                    alt="Dr. Sarah Wilson"
-                    class="w-full h-64 object-cover"
-                />
-                <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-2 rounded-bl-lg">
-                    Orthodontist
-                </div>
-            </div>
-            
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">
-                    dr. Sarah Wilson
-                </h3>
-                
-                <div class="space-y-3">
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <span>Pengalaman: 8 tahun</span>
-                    </div>
-                    
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span>Universitas Indonesia</span>
-                    </div>
-                    
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span class="text-sm">Senin - Jumat: 09.00 - 17.00</span>
-                    </div>
-                </div>
-                
-                <button class="mt-6 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
-                    Buat Janji
-                </button>
-            </div>
-        </div>
+    <section id="dokter" class="mt-32 mb-40">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+            Tim Dokter Gigi Kami
+        </h2>
+        
+       
+        <div class="relative"> <!-- Added relative positioning for custom buttons -->
+          <!-- Custom navigation buttons -->
+          <div class="custom-nav-button custom-prev">❮</div>
+          <div class="custom-nav-button custom-next">❯</div>
+          
+          <!-- Owl Carousel -->
+          <div class="owl-carousel owl-theme">
+               <!-- Dokter 1 -->
+        <div class="item px-2">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div class="relative">
+                  <img
+                      src="https://placehold.co/300x300"
+                      alt="Dr. Sarah Wilson"
+                      class="w-full h-64 object-cover"
+                  />
+                  <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-2 rounded-bl-lg">
+                      Orthodontist
+                  </div>
+              </div>
+              
+              <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">
+                      dr. Sarah Wilson
+                  </h3>
+                  
+                  <div class="space-y-3">
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          <span>Pengalaman: 8 tahun</span>
+                      </div>
+                      
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                          <span>Universitas Indonesia</span>
+                      </div>
+                      
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span class="text-sm">Senin - Jumat: 09.00 - 17.00</span>
+                      </div>
+                  </div>
+                  
+                  <button class="mt-6 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
+                      Buat Janji
+                  </button>
+              </div>
+          </div>
+      </div>
 
-        <!-- Dokter 2 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div class="relative">
-                <img
-                    src="https://placehold.co/300x300"
-                    alt="Dr. David Chen"
-                    class="w-full h-64 object-cover"
-                />
-                <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-2 rounded-bl-lg">
-                    Periodontist
-                </div>
-            </div>
-            
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">
-                    dr. David Chen
-                </h3>
-                
-                <div class="space-y-3">
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <span>Pengalaman: 12 tahun</span>
-                    </div>
-                    
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span>Universitas Gadjah Mada</span>
-                    </div>
-                    
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span class="text-sm">Selasa - Sabtu: 10.00 - 18.00</span>
-                    </div>
-                </div>
-                
-                <button class="mt-6 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
-                    Buat Janji
-                </button>
-            </div>
-        </div>
+      <!-- Dokter 2 -->
+      <div class="item px-2">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div class="relative">
+                  <img
+                      src="https://placehold.co/300x300"
+                      alt="Dr. David Chen"
+                      class="w-full h-64 object-cover"
+                  />
+                  <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-2 rounded-bl-lg">
+                      Periodontist
+                  </div>
+              </div>
+              
+              <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">
+                      dr. David Chen
+                  </h3>
+                  
+                  <div class="space-y-3">
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          <span>Pengalaman: 12 tahun</span>
+                      </div>
+                      
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                          <span>Universitas Gadjah Mada</span>
+                      </div>
+                      
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span class="text-sm">Selasa - Sabtu: 10.00 - 18.00</span>
+                      </div>
+                  </div>
+                  
+                  <button class="mt-6 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
+                      Buat Janji
+                  </button>
+              </div>
+          </div>
+      </div>
 
-        <!-- Dokter 3 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div class="relative">
-                <img
-                    src="https://placehold.co/300x300"
-                    alt="Dr. Amanda Lee"
-                    class="w-full h-64 object-cover"
-                />
-                <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-2 rounded-bl-lg">
-                    Endodontist
-                </div>
-            </div>
-            
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">
-                    dr. Amanda Lee
-                </h3>
-                
-                <div class="space-y-3">
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <span>Pengalaman: 10 tahun</span>
-                    </div>
-                    
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span>Universitas Airlangga</span>
-                    </div>
-                    
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span class="text-sm">Senin - Kamis: 08.00 - 16.00</span>
-                    </div>
-                </div>
-                
-                <button class="mt-6 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
-                    Buat Janji
-                </button>
-            </div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div class="relative">
-                <img
-                    src="https://placehold.co/300x300"
-                    alt="Dr. Amanda Lee"
-                    class="w-full h-64 object-cover"
-                />
-                <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-2 rounded-bl-lg">
-                    Endodontist
-                </div>
-            </div>
-            
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">
-                    dr. Amanda Lee
-                </h3>
-                
-                <div class="space-y-3">
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <span>Pengalaman: 10 tahun</span>
-                    </div>
-                    
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span>Universitas Airlangga</span>
-                    </div>
-                    
-                    <div class="flex items-center text-gray-600">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span class="text-sm">Senin - Kamis: 08.00 - 16.00</span>
-                    </div>
-                </div>
-                
-                <button class="mt-6 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
-                    Buat Janji
-                </button>
-            </div>
-        </div>
+      <!-- Dokter 3 -->
+      <div class="item px-2">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div class="relative">
+                  <img
+                      src="https://placehold.co/300x300"
+                      alt="Dr. Amanda Lee"
+                      class="w-full h-64 object-cover"
+                  />
+                  <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-2 rounded-bl-lg">
+                      Endodontist
+                  </div>
+              </div>
+              
+              <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">
+                      dr. Amanda Lee
+                  </h3>
+                  
+                  <div class="space-y-3">
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          <span>Pengalaman: 10 tahun</span>
+                      </div>
+                      
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                          <span>Universitas Airlangga</span>
+                      </div>
+                      
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span class="text-sm">Senin - Kamis: 08.00 - 16.00</span>
+                      </div>
+                  </div>
+                  
+                  <button class="mt-6 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
+                      Buat Janji
+                  </button>
+              </div>
+          </div>
+      </div>
+      <div class="item px-2">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div class="relative">
+                  <img
+                      src="https://placehold.co/300x300"
+                      alt="Dr. Amanda Lee"
+                      class="w-full h-64 object-cover"
+                  />
+                  <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-2 rounded-bl-lg">
+                      Endodontist
+                  </div>
+              </div>
+              
+              <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">
+                      dr. Amanda Lee
+                  </h3>
+                  
+                  <div class="space-y-3">
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          <span>Pengalaman: 10 tahun</span>
+                      </div>
+                      
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                          <span>Universitas Airlangga</span>
+                      </div>
+                      
+                      <div class="flex items-center text-gray-600">
+                          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span class="text-sm">Senin - Kamis: 08.00 - 16.00</span>
+                      </div>
+                  </div>
+                  
+                  <button class="mt-6 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
+                      Buat Janji
+                  </button>
+              </div>
+          </div>
+      </div>
+          </div>
     </div>
     </section>
+
+
+    <section id="About" class="mx-auto my-16 mb-32 w-full">
+      <div class="container p-5 w-full">
+        <h1 class="text-center font-bold text-4xl mb-10">Tentang Kami</h1>
+        <div class="flex flex-wrap gap-5 lg:gap-0">
+          <div class="flex flex-wrap w-full lg:w-[60%]">
+            <div class="w-full md:w-[80%] lg:w-[100%] mx-auto lg:ml-10">
+              <h1 class="text-3xl md:text-4xl font-semibold font-serif text-center lg:text-left">Committed to a mission-driven team that feels like family</h1>
+            </div>
+            <div class="flex flex-wrap w-full mt-10 md:mt-20 gap-2 justify-center">
+              <div class="w-full sm:w-[48%] md:w-[47%]">
+                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center">
+                  <h3 class="text-2xl font-bold">Best Workplaces 2022</h3>
+                  <p class="text-xl">Inc Magazine</p>
+                </div>
+                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center">
+                  <h3 class="text-2xl font-bold">Best Workplaces 2022</h3>
+                  <p class="text-xl">Inc Magazine</p>
+                </div>
+              </div>
+              <div class="w-full sm:w-[48%] md:w-[47%]">
+                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center">
+                  <h3 class="text-2xl font-bold">Best Workplaces 2022</h3>
+                  <p class="text-xl">Inc Magazine</p>
+                </div>
+                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center">
+                  <h3 class="text-2xl font-bold">Best Workplaces 2022</h3>
+                  <p class="text-xl">Inc Magazine</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="img-about w-full md:w-[80%] lg:w-[35%] mx-auto lg:mx-0 relative lg:relative mt-10 lg:mt-0">
+            <img src="test1.png" alt="" class="w-full md:w-[90%] mx-auto lg:absolute lg:top-44">
+          </div>
+        </div>
+      </div>
+    </section>
     
+    <section id="FAQ" class="mx-auto my-16 mb-32 w-full">
+      <div class="container p-5 w-full">
+          <div class="bg-purple p-5 w-full rounded-lg text-white">
+              <div class="mb-10">
+                  <h1 class="text-center font-bold text-4xl mb-10">FAQ</h1>
+              </div>
+              <div class="flex flex-col justify-center">
+                  <div class="mb-10 w-[90%] mx-auto">
+                      <h1 class="text-4xl md:text-6xl font-bold border-b-2 md:w-[25%] w-[30%]">General</h1>
+                  </div>
+                  <div class="flex flex-col italic gap-10 w-[90%] mx-auto">
+                      <!-- FAQ Item 1 -->
+                      <div class="faq-item">
+                          <div class="flex gap-16 items-center cursor-pointer">
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Do you have a referral program?</p>
+                              <span class="transition-transform duration-300">
+                                  <i class="fa-solid fa-arrow-down"></i>
+                              </span>
+                          </div>
+                          <div class="faq-answer pl-4 text-gray-200">
+                              <p class="py-4">Yes, we have a referral program. You can earn rewards by referring new customers to our services. Contact our support team for more details.</p>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 2 -->
+                      <div class="faq-item">
+                          <div class="flex gap-16 items-center cursor-pointer">
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">How do I schedule an appointment?</p>
+                              <span class="transition-transform duration-300">
+                                  <i class="fa-solid fa-arrow-down"></i>
+                              </span>
+                          </div>
+                          <div class="faq-answer pl-4 text-gray-200">
+                              <p class="py-4">You can schedule an appointment through our website or by calling our office directly. We offer flexible scheduling options to accommodate your needs.</p>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 3 -->
+                      <div class="faq-item">
+                          <div class="flex gap-16 items-center cursor-pointer">
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">What insurance do you accept?</p>
+                              <span class="transition-transform duration-300">
+                                  <i class="fa-solid fa-arrow-down"></i>
+                              </span>
+                          </div>
+                          <div class="faq-answer pl-4 text-gray-200">
+                              <p class="py-4">We accept most major insurance providers. Please contact our office for specific information about your insurance coverage.</p>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 4 -->
+                      <div class="faq-item">
+                          <div class="flex gap-16 items-center cursor-pointer">
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">What are your office hours?</p>
+                              <span class="transition-transform duration-300">
+                                  <i class="fa-solid fa-arrow-down"></i>
+                              </span>
+                          </div>
+                          <div class="faq-answer pl-4 text-gray-200">
+                              <p class="py-4">Our office is open Monday through Friday from 9 AM to 5 PM. We also offer extended hours on select days.</p>
+                          </div>
+                      </div>
+
+                      <!-- FAQ Item 5 -->
+                      <div class="faq-item">
+                          <div class="flex gap-16 items-center cursor-pointer">
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Do you offer emergency services?</p>
+                              <span class="transition-transform duration-300">
+                                  <i class="fa-solid fa-arrow-down"></i>
+                              </span>
+                          </div>
+                          <div class="faq-answer pl-4 text-gray-200">
+                              <p class="py-4">Yes, we provide emergency services. Please call our emergency hotline for immediate assistance outside regular office hours.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
     
   </div>
 
   <script src="../src/index.js"></script>
+  <script src="../src/carousel.js"></script>
+  <script src="../src/faq.js"></script>
+  
 </body>
 
 </html>
