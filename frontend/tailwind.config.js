@@ -16,7 +16,9 @@ module.exports = {
       'purple': '#5f2ff8',
       'orange': '#ed7634',
       'card-purple': '#bfacfc',
-      'card-pink': '#ffc9af'
+      'card-pink': '#ffc9af',
+      'gradient-lokasi-green' : '#85c38d',
+      'gradient-lokasi-blue' : '#2fb6c0',
     },
     fontFamily: {
       'caveat': ['Caveat', 'sans-serif'],
