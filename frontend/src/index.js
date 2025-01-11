@@ -28,21 +28,21 @@ const TAB_CONTENT = {
   tombol1: {
     title: 'Transformasi Senyum Anda dengan Bedah Mulut',
     description: 'Bedah mulut membantu mengatasi berbagai masalah gigi dan mulut untuk kesehatan optimal dan senyum percaya diri.',
-    cards: ['Bedah Gigi Bungsu', 'Perbaikan Struktur Gigi', 'Penanganan Infeksi Gigi'],
+    cards: ['Bedah Gigi Bungsu', 'Pemasangan Kawat Gigi', 'Penanganan Infeksi Gigi'],
     images: [
-      'path/to/bedah-1.jpg',
-      'path/to/bedah-2.jpg',
-      'path/to/bedah-3.jpg'
+      'images/bedah-gigi-1.jpg',
+      'images/bedah-gigi-2.jpg',
+      'images/bedah-gigi-3.jpg'
     ]
   },
   tombol2: {
-    title: 'Pemasangan Kawat Gigi',
-    description: 'Kami menyediakan pemasangan kawat gigi untuk memperbaiki susunan gigi agar lebih rapi dan sehat.',
-    cards: ['Konsultasi Awal', 'Pemasangan Kawat Gigi', 'Kontrol Rutin'],
+    title: 'Veneer Gigi',
+    description: 'Kami menawarkan layanan veneer gigi untuk memperindah tampilan gigi Anda agar lebih putih, rapi, dan menarik.',
+    cards: ['Konsultasi Awal', 'Pemasangan Veneer', 'Perawatan Veneer'],
     images: [
-      'path/to/kawat-gigi-1.jpg',
-      'path/to/kawat-gigi-2.jpg',
-      'path/to/kawat-gigi-3.jpg'
+      'images/veneer-1.jpg',
+      'images/veneer-2.jpg',
+      'images/veneer-3.jpg'
     ]
   },
   tombol3: {
@@ -50,9 +50,9 @@ const TAB_CONTENT = {
     description: 'Perawatan saluran akar membantu menyelamatkan gigi yang mengalami kerusakan parah agar tetap berfungsi.',
     cards: ['Diagnosa Masalah Akar', 'Perawatan Saluran Akar', 'Restorasi Gigi'],
     images: [
-      'path/to/saluran-akar-1.jpg',
-      'path/to/saluran-akar-2.jpg',
-      'path/to/saluran-akar-3.jpg'
+      'images/akar-1.jpg',
+      'images/akar-2.png',
+      'images/akar-3.jpg'
     ]
   },
   tombol4: {
@@ -60,9 +60,9 @@ const TAB_CONTENT = {
     description: 'Scaling dan polishing untuk membersihkan plak dan noda pada gigi, memberikan senyum yang lebih cerah.',
     cards: ['Pembersihan Plak', 'Polishing Gigi', 'Pencegahan Karies'],
     images: [
-      'path/to/scaling-1.jpg',
-      'path/to/scaling-2.jpg',
-      'path/to/scaling-3.jpg'
+      'images/scaling-1.jpg',
+      'images/scaling-2.jpg',
+      'images/scaling-3.jpg'
     ]
   }
 };
