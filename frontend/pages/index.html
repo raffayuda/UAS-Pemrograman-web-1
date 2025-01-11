@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -27,7 +27,7 @@
   <nav class="fixed top-0 left-0 right-0 backdrop-blur-md bg-white/70 shadow-lg z-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex justify-between">
-        <div class="flex space-x-7">
+        <div class="flex space-x-32">
           <div>
             <!-- Website Logo -->
             <a href="#" class="flex items-center py-4">
@@ -37,15 +37,18 @@
           <!-- Primary Navbar items -->
           <div class="hidden md:flex items-center space-x-1">
             <a href="#" class="py-4 px-2 text-purple border-b-4 border-blue font-semibold">Home</a>
-            <a href="#" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Services</a>
-            <a href="#" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">About</a>
-            <a href="#" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Contact Us</a>
+            <a href="#layanan" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Layanan</a>
+            <a href="#fasilitas" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Fasilitas</a>
+            <a href="#dokter" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Dokter</a>
+            <a href="#tentang" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Tentang Kami</a>
+            <a href="#daftar" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Daftar</a>
+            <a href="#FAQ" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">FAQ</a>
+            <a href="#" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Testimonials</a>
           </div>
         </div>
         <!-- Secondary Navbar items -->
         <div class="hidden md:flex items-center space-x-3">
           <a href="#" class="py-2 px-4 text-gray-500 font-medium hover:text-blue-500 transition duration-300 hover:text-purple">Login</a>
-          <a href="#" class="py-2 px-4 bg-blue-500 hover:text-purple font-medium rounded hover:bg-blue-400 transition duration-300">Signup</a>
         </div>
         <!-- Mobile menu button -->
         <div class="md:hidden flex items-center">
@@ -61,11 +64,14 @@
     <div class="mobile-menu md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
       <ul class="pt-4 pb-3">
         <li><a href="#" class="block text-sm px-4 py-4 text-purple bg-blue-500 font-semibold transition-all duration-300">Home</a></li>
-        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Services</a></li>
-        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">About</a></li>
-        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Contact Us</a></li>
+        <li><a href="#layanan" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Layanan</a></li>
+        <li><a href="#fasilitas" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Fasilitas</a></li>
+        <li><a href="#dokter" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Dokter</a></li>
+        <li><a href="#tentang" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Tentang Kami</a></li>
+        <li><a href="#daftar" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Daftar</a></li>
+        <li><a href="#FAQ" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">FAQ</a></li>
+        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Testimonials</a></li>
         <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Login</a></li>
-        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Sign Up</a></li>
       </ul>
     </div>
   </nav>
@@ -87,7 +93,7 @@
         <img src="gigi.png" alt="" class="w-full">
       </div>
     </div>
-    <div class="servies mt-40">
+    <section class="servies mt-32 pt-32" id="layanan">
       <div class="container mx-auto px-4 md:w-3/4 flex justify-center flex-col">
         <h1 class="text-2xl md:text-4xl font-bold text-center">Layanan Terbaik Dari Kami</h1>
 
@@ -148,7 +154,7 @@
             </div>
         </div>
     </div>
-    </div>
+    </section>
 
     <section id="fasilitas" class="py-10 md:py-20 mt-20">
       <div class="container">
@@ -210,7 +216,7 @@
     </section>
 
 
-    <section id="dokter" class="mt-32 mb-40">
+    <section id="dokter" class="mt-20 mb-40 pt-32">
       <div class="container mx-auto px-4 py-8">
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
             Tim Dokter Gigi Kami
@@ -422,7 +428,7 @@
     </section>
 
 
-    <section id="About" class="mx-auto my-16 mb-32 w-full">
+    <section id="tentang" class="mx-auto pt-32 mb-32 w-full">
       <div class="container p-5 w-full">
         <h1 class="text-center font-bold text-4xl mb-10">Tentang Kami</h1>
         <div class="flex flex-wrap gap-5 lg:gap-0">
@@ -454,14 +460,14 @@
             </div>
           </div>
           <div class="img-about w-full md:w-[80%] lg:w-[35%] mx-auto lg:mx-0 relative lg:relative mt-10 lg:mt-0">
-            <img src="test1.png" alt="" class="w-full md:w-[90%] mx-auto lg:absolute lg:top-44">
+            <img src="test1.png" alt="" class="w-full md:w-[90%] mx-auto lg:absolute lg:top-20">
           </div>
         </div>
       </div>
     </section>
 
 
-    <section id="booking" class="mx-auto my-16 mb-32 w-full">
+    <section id="daftar" class="mx-auto my-16 pt-40 mb-32 w-full">
       <div class="container p-5 w-full bg-card-purple rounded-lg pb-40 relative">
         <div class="text">
           <h1 class="text-center font-bold text-4xl mb-10 text-white">Daftarkan Jadwal Anda</h1>
@@ -530,7 +536,7 @@
     
     
 
-    <section id="FAQ" class="mx-auto my-16 mt-96 mb-32 w-full">
+    <section id="FAQ" class="mx-auto my-16 mt-96 mb-32 pt-40 w-full">
       <div class="container w-full">
           <div class="bg-purple p-5 w-full rounded-lg text-white">
               <div class="mb-10">
@@ -691,16 +697,16 @@
 </section>
 
 <section id="lokasi" class="mx-auto my-16 mb-32 w-full">
-  <div class="container p-5 w-full h-fit border-8 rounded-lg border-purple">
-    <h1 class="text-center font-bold text-4xl mb-10">Lokasi</h1>
+  <div class="container p-5 w-full h-fit rounded-lg bg-gradient-to-tr from-purple to-blue">
+    <h1 class="text-center font-bold text-4xl mb-10 text-white">Lokasi</h1>
     <div class="flex flex-wrap justify-center gap-5">
-      <div class="teks-lokasi w-full md:w-[48%]">
+      <div class="teks-lokasi w-full md:w-[48%] bg-white p-5 rounded-lg">
         <div class="img">
           <img src="test1.png" alt="" class="w-full h-full">
         </div>
       </div>
       <div class="map md:w-[48%] w-full">
-        <iframe class="w-full md:h-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.298131667851!2d106.80133647399411!3d-6.609829093384158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5e859ea83dd%3A0x8b65bbe235674c30!2sSURYA%20KENCANA%2C%20Jl.%20Suryakencana%20No.260B%2C%20RT.01%2FRW.05%2C%20Gudang%2C%20Kecamatan%20Bogor%20Tengah%2C%20Kota%20Bogor%2C%20Jawa%20Barat%2016123!5e0!3m2!1sid!2sid!4v1736561666174!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="w-full md:h-full h-96 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.298131667851!2d106.80133647399411!3d-6.609829093384158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5e859ea83dd%3A0x8b65bbe235674c30!2sSURYA%20KENCANA%2C%20Jl.%20Suryakencana%20No.260B%2C%20RT.01%2FRW.05%2C%20Gudang%2C%20Kecamatan%20Bogor%20Tengah%2C%20Kota%20Bogor%2C%20Jawa%20Barat%2016123!5e0!3m2!1sid!2sid!4v1736561666174!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
@@ -711,7 +717,11 @@
     <h1 class="text-center font-bold text-4xl mb-10">Developer</h1>
     <div class="flex flex-wrap gap-5">
       <div class="flex flex-col gap-5">
-        <div class="p-5 bg-teal-300 rounded-lg"></div>
+        <div class=" bg-teal-300 rounded-lg md:w-1/2">
+          <div class="img w-full h-96">
+            <img src="test1.png" class="w-full h-full" alt="">
+          </div>
+        </div>
         <div></div>
       </div>
       <div></div>
