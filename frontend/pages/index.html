@@ -36,19 +36,19 @@
           </div>
           <!-- Primary Navbar items -->
           <div class="hidden md:flex items-center space-x-1">
-            <a href="#" class="py-4 px-2 text-purple border-b-4 border-blue font-semibold">Home</a>
+            <a href="#" class="py-4 px-2 text-purple border-b-4 border-green-500 font-semibold active">Home</a>
             <a href="#layanan" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Layanan</a>
             <a href="#fasilitas" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Fasilitas</a>
             <a href="#dokter" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Dokter</a>
             <a href="#tentang" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Tentang Kami</a>
             <a href="#daftar" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Daftar</a>
             <a href="#FAQ" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">FAQ</a>
-            <a href="#" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Testimonials</a>
+            <a href="#testimonials" class="py-4 px-2 text-gray font-semibold hover:text-purple transition duration-300">Testimonials</a>
           </div>
         </div>
         <!-- Secondary Navbar items -->
         <div class="hidden md:flex items-center space-x-3">
-          <a href="#" class="py-2 px-4 text-gray-500 font-medium hover:text-blue-500 transition duration-300 hover:text-purple">Login</a>
+          <a href="login.html" class="py-2 px-4 text-gray-500 font-medium hover:text-blue-500 transition duration-300 hover:text-purple">Login</a>
         </div>
         <!-- Mobile menu button -->
         <div class="md:hidden flex items-center">
@@ -63,15 +63,15 @@
     <!-- Mobile menu -->
     <div class="mobile-menu md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
       <ul class="pt-4 pb-3">
-        <li><a href="#" class="block text-sm px-4 py-4 text-purple bg-blue-500 font-semibold transition-all duration-300">Home</a></li>
-        <li><a href="#layanan" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Layanan</a></li>
-        <li><a href="#fasilitas" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Fasilitas</a></li>
-        <li><a href="#dokter" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Dokter</a></li>
-        <li><a href="#tentang" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Tentang Kami</a></li>
-        <li><a href="#daftar" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Daftar</a></li>
-        <li><a href="#FAQ" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">FAQ</a></li>
-        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Testimonials</a></li>
-        <li><a href="#" class="block text-sm px-4 py-4 text-gray-500 hover:bg-blue-500 hover:text-purple transition-all duration-300">Login</a></li>
+        <li><a href="#" class="block w-[80px] text-purple active text-sm px-4 py-4 bg-blue-500 font-semibold transition-all duration-300">Home</a></li>
+        <li><a href="#layanan" class="block w-[80px] text-sm px-4 py-4  hover:bg-blue-500 hover:text-purple transition-all duration-300">Layanan</a></li>
+        <li><a href="#fasilitas" class="block w-[80px] text-sm px-4 py-4  hover:bg-blue-500 hover:text-purple transition-all duration-300">Fasilitas</a></li>
+        <li><a href="#dokter" class="block w-[80px] text-sm px-4 py-4  hover:bg-blue-500 hover:text-purple transition-all duration-300">Dokter</a></li>
+        <li><a href="#tentang" class="block w-[150px] text-sm px-4 py-4  hover:bg-blue-500 hover:text-purple transition-all duration-300">Tentang Kami</a></li>
+        <li><a href="#daftar" class="block w-[80px] text-sm px-4 py-4  hover:bg-blue-500 hover:text-purple transition-all duration-300">Daftar</a></li>
+        <li><a href="#FAQ" class="block w-[80px] text-sm px-4 py-4  hover:bg-blue-500 hover:text-purple transition-all duration-300">FAQ</a></li>
+        <li><a href="#testimonials" class="block w-[80px] text-sm px-4 py-4  hover:bg-blue-500 hover:text-purple transition-all duration-300">Testimonials</a></li>
+        <li><a href="login.html" class="block text-sm px-4 py-4  hover:bg-blue-500 hover:text-purple transition-all duration-300">Login</a></li>
       </ul>
     </div>
   </nav>
@@ -95,125 +95,126 @@
     </div>
     <section class="servies mt-32 pt-32" id="layanan">
       <div class="container mx-auto px-4 md:w-3/4 flex justify-center flex-col">
-        <h1 class="text-2xl md:text-4xl font-bold text-center">Layanan Terbaik Dari Kami</h1>
-
-        <!-- Button Container -->
-        <div class="w-full mx-auto mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          <div class="relative">
-            <button class="px-3 py-2 font-medium rounded-2xl border-2 border-purple bg-gradient-to-r from-purple to-blue text-white text-sm md:text-base w-full" id="tombol1">Bedah Mulut</button>
+          <h1 class="text-2xl md:text-4xl font-bold text-center">Layanan Terbaik dari Klinik Gigi Kami</h1>
+  
+          <!-- Button Container -->
+          <div class="w-full mx-auto mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+              <div class="relative">
+                  <button class="px-3 py-2 font-medium rounded-2xl border-2 border-purple bg-gradient-to-r from-purple to-blue text-white text-sm md:text-base w-full" id="tombol1">Bedah Gigi</button>
+              </div>
+              <div class="relative">
+                  <button class="px-3 py-2 font-medium rounded-2xl border-2 border-purple text-black text-sm md:text-base w-full" id="tombol2">Pemasangan Kawat Gigi</button>
+              </div>
+              <div class="relative">
+                  <button class="px-3 py-2 font-medium rounded-2xl border-2 border-purple text-black text-sm md:text-base w-full" id="tombol3">Perawatan Saluran Akar</button>
+              </div>
+              <div class="relative">
+                  <button class="px-3 py-2 font-medium rounded-2xl border-2 border-purple text-black text-sm md:text-base w-full" id="tombol4">Scaling dan Polishing</button>
+              </div>
           </div>
-          <div class="relative">
-            <button class="px-3 py-2 font-medium rounded-2xl border-2 border-purple text-black text-sm md:text-base w-full" id="tombol2">Pemasangan Behel</button>
-          </div>
-          <div class="relative">
-            <button class="px-3 py-2 font-medium rounded-2xl border-2 border-purple text-black text-sm md:text-base w-full" id="tombol3">Perawatan Gigi</button>
-          </div>
-          <div class="relative">
-            <button class="px-3 py-2 font-medium rounded-2xl border-2 border-purple text-black text-sm md:text-base w-full" id="tombol4">Pembersihan Gigi</button>
-          </div>
-        </div>
       </div>
       <div class="bg-purple w-full p-4 md:p-10 pb-0 mt-6 md:mt-10 rounded-2xl flex-col flex items-center justify-center md:h-full">
-        <!-- Text Content -->
-        <div class="text-center px-4">
-            <h1 class="text-xl md:text-3xl text-white font-bold mb-2" id="title-1">Transformasi Senyum Anda dengan Bedah Mulut</h1>
-            <p class="text-sm md:text-md text-white" id="paragraf">Experience the life-changing power of a new smile.</p>
-        </div>
-
-        <!-- Cards Container -->
-        <div class="p-4 md:p-10 pb-0 w-full mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-          
-            <div class="bg-gradient-to-b from-purple via-purple to-white p-5 rounded-lg">
-                <div class="mb-4">
-                    <h1 class="text-md font-bold text-center text-white" id="card-title-1">Walkthroughs</h1>
-                </div>
-                <div>
-                    <img id="card-img-1" src="test1.png" alt="" class="rounded-md w-full object-cover">
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="bg-gradient-to-b from-purple via-purple to-white p-5  rounded-lg">
-                <div class="mb-4">
-                    <h1 id="card-title-2" class="text-md font-bold text-center text-white">Coachmark</h1>
-                </div>
-                <div>
-                    <img id="card-img-2" src="test.png" alt="" class="rounded-md w-full object-cover">
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-gradient-to-b from-purple via-purple to-white p-5 rounded-t-lg">
-                <div class="mb-4">
-                    <h1 id="card-title-3" class="text-md font-bold text-center text-white w-full">In-app Messages</h1>
-                </div>
-                <div>
-                    <img id="card-img-3" src="test2.png" alt="" class="rounded-md w-full object-cover">
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
-    <section id="fasilitas" class="py-10 md:py-20 mt-20">
-      <div class="container">
-        <div class="text-content text-center">
-          <h3 class="text-base md:text-2xl font-medium">Fasilitas</h3>
-          <h1 class="text-2xl md:text-5xl font-bold">With Nudge, you get the whole damn deal</h1>
-        </div>
-        <div class="fasilitas-content flex flex-wrap w-full mt-10 justify-center gap-6">
-          <div class="flex flex-col gap-4 w-full sm:max-w-[80%] md:max-w-[47%]">
-            <div class="bg-gradient-to-t from-purple via-card-purple to-blue rounded-xl px-4 py-6 w-full">
-              <div class="w-full mx-auto text-center">
-                <h1 class="text-xl md:text-3xl font-bold">Real-Time Analytics</h1>
-                <p class="text-sm md:text-base mt-2">
-                  Analyze campaign performance, uncover insights and double down on strategies that work across the user journey.
-                </p>
+          <!-- Text Content -->
+          <div class="text-center px-4">
+              <h1 class="text-xl md:text-3xl text-white font-bold mb-2" id="title-1">Transformasi Senyum Anda dengan Bedah Mulut</h1>
+              <p class="text-sm md:text-md text-white" id="paragraf">Bedah mulut membantu mengatasi berbagai masalah gigi dan mulut untuk kesehatan optimal dan senyum percaya diri.</p>
+          </div>
+  
+          <!-- Cards Container -->
+          <div class="p-4 md:p-10 pb-0 w-full mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Card 1 -->
+              <div class="bg-gradient-to-b from-purple via-purple to-white p-5 rounded-lg">
+                  <div class="mb-4">
+                      <h1 class="text-md font-bold text-center text-white" id="card-title-1">Bedah Gigi Bungsu</h1>
+                  </div>
+                  <div>
+                      <img id="card-img-1" src="bedah-gigi.png" alt="Bedah Gigi Bungsu" class="rounded-md w-full object-cover">
+                  </div>
               </div>
-              <div class="w-full mx-auto flex justify-center mt-5">
-                <img src="test.png" class="w-full" alt="Real-Time Analytics">
+  
+              <!-- Card 2 -->
+              <div class="bg-gradient-to-b from-purple via-purple to-white p-5 rounded-lg">
+                  <div class="mb-4">
+                      <h1 id="card-title-2" class="text-md font-bold text-center text-white">Pemasangan Kawat Gigi</h1>
+                  </div>
+                  <div>
+                      <img id="card-img-2" src="kawat-gigi.png" alt="Pemasangan Kawat Gigi" class="rounded-md w-full object-cover">
+                  </div>
               </div>
+  
+              <!-- Card 3 -->
+              <div class="bg-gradient-to-b from-purple via-purple to-white p-5 rounded-t-lg">
+                  <div class="mb-4">
+                      <h1 id="card-title-3" class="text-md font-bold text-center text-white w-full">Scaling dan Polishing</h1>
+                  </div>
+                  <div>
+                      <img id="card-img-3" src="scaling-polishing.png" alt="Scaling dan Polishing" class="rounded-md w-full object-cover">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+
+  <section id="fasilitas" class="py-10 md:py-20 mt-20">
+    <div class="container">
+      <div class="text-content text-center">
+        <h3 class="text-base md:text-2xl font-medium">Fasilitas</h3>
+        <h1 class="text-2xl md:text-5xl font-bold">Fasilitas Unggulan untuk Kesehatan dan Kenyamanan Anda</h1>
+      </div>
+      <div class="fasilitas-content flex flex-wrap w-full mt-10 justify-center gap-6">
+        <div class="flex flex-col gap-4 w-full sm:max-w-[80%] md:max-w-[47%]">
+          <div class="bg-gradient-to-t from-purple via-card-purple to-blue rounded-xl px-4 py-6 w-full">
+            <div class="w-full mx-auto text-center">
+              <h1 class="text-xl md:text-3xl font-bold">Ruang Perawatan Modern</h1>
+              <p class="text-sm md:text-base mt-2">
+                Dilengkapi dengan teknologi terkini untuk memberikan layanan perawatan gigi yang nyaman dan aman.
+              </p>
             </div>
-            <div class="bg-gradient-to-t from-pink-400 via-card-pink to-blue rounded-xl px-4 py-6 w-full">
-              <div class="w-full mx-auto text-center">
-                <h1 class="text-xl md:text-3xl font-bold">Customizable Dashboards</h1>
-                <p class="text-sm md:text-base mt-2">
-                  Customize your dashboards to focus on the metrics and data points that matter the most to you.
-                </p>
-              </div>
-              <div class="w-full mx-auto flex justify-center mt-5">
-                <img src="test.png" class="w-full " alt="Customizable Dashboards">
-              </div>
+            <div class="w-full mx-auto flex justify-center mt-5">
+              <img src="path/to/ruang-perawatan.jpg" class="w-full" alt="Ruang Perawatan Modern">
             </div>
           </div>
-          <div class="flex flex-col gap-4 w-full sm:max-w-[80%] md:max-w-[47%]">
-            <div class="bg-gradient-to-t from-pink-400 via-card-pink to-blue rounded-xl px-4 py-6 w-full">
-              <div class="w-full mx-auto text-center">
-                <h1 class="text-xl md:text-3xl font-bold">Advanced Insights</h1>
-                <p class="text-sm md:text-base mt-2">
-                  Gain deeper insights with advanced analytics that empower smarter decision-making across your campaigns.
-                </p>
-              </div>
-              <div class="w-full mx-auto flex justify-center mt-5">
-                <img src="test.png" class="w-full " alt="Advanced Insights">
-              </div>
+          <div class="bg-gradient-to-t from-pink-400 via-card-pink to-blue rounded-xl px-4 py-6 w-full">
+            <div class="w-full mx-auto text-center">
+              <h1 class="text-xl md:text-3xl font-bold">Sterilisasi Alat yang Terjamin</h1>
+              <p class="text-sm md:text-base mt-2">
+                Proses sterilisasi alat sesuai standar internasional untuk menjaga kebersihan dan kesehatan pasien.
+              </p>
             </div>
-            <div class="bg-gradient-to-t from-purple via-card-purple to-blue rounded-xl px-4 py-6 w-full">
-              <div class="w-full mx-auto text-center">
-                <h1 class="text-xl md:text-3xl font-bold">Team Collaboration</h1>
-                <p class="text-sm md:text-base mt-2">
-                  Enhance productivity by collaborating seamlessly with your team on a unified platform.
-                </p>
-              </div>
-              <div class="w-full mx-auto flex justify-center mt-5">
-                <img src="test.png" class="w-full " alt="Team Collaboration">
-              </div>
+            <div class="w-full mx-auto flex justify-center mt-5">
+              <img src="path/to/sterilisasi.jpg" class="w-full" alt="Sterilisasi Alat yang Terjamin">
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 w-full sm:max-w-[80%] md:max-w-[47%]">
+          <div class="bg-gradient-to-t from-pink-400 via-card-pink to-blue rounded-xl px-4 py-6 w-full">
+            <div class="w-full mx-auto text-center">
+              <h1 class="text-xl md:text-3xl font-bold">Ruang Tunggu Nyaman</h1>
+              <p class="text-sm md:text-base mt-2">
+                Ruang tunggu yang dirancang untuk memberikan kenyamanan dengan fasilitas Wi-Fi dan hiburan.
+              </p>
+            </div>
+            <div class="w-full mx-auto flex justify-center mt-5">
+              <img src="path/to/ruang-tunggu.jpg" class="w-full" alt="Ruang Tunggu Nyaman">
+            </div>
+          </div>
+          <div class="bg-gradient-to-t from-purple via-card-purple to-blue rounded-xl px-4 py-6 w-full">
+            <div class="w-full mx-auto text-center">
+              <h1 class="text-xl md:text-3xl font-bold">Teknologi Diagnostik Canggih</h1>
+              <p class="text-sm md:text-base mt-2">
+                Peralatan diagnostik seperti X-ray digital untuk membantu dokter dalam mendiagnosa dengan lebih tepat.
+              </p>
+            </div>
+            <div class="w-full mx-auto flex justify-center mt-5">
+              <img src="path/to/diagnostik.jpg" class="w-full" alt="Teknologi Diagnostik Canggih">
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+  
 
 
     <section id="dokter" class="mt-20 mb-40 pt-32">
@@ -434,37 +435,39 @@
         <div class="flex flex-wrap gap-5 lg:gap-0">
           <div class="flex flex-wrap w-full lg:w-[60%]">
             <div class="w-full md:w-[80%] lg:w-[100%] mx-auto lg:ml-10">
-              <h1 class="text-3xl md:text-4xl font-semibold font-serif text-center lg:text-left">Committed to a mission-driven team that feels like family</h1>
+              <h1 class="text-3xl md:text-3xl font-semibold font-serif text-center lg:text-left">Berdedikasi untuk Memberikan Perawatan Gigi Terbaik dengan Sentuhan Kekeluargaan, 
+                Mengutamakan Kenyamanan dan Kepuasan Setiap Pasien.</h1>
             </div>
             <div class="flex flex-wrap w-full mt-10 md:mt-20 gap-2 justify-center">
               <div class="w-full sm:w-[48%] md:w-[47%]">
-                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center">
-                  <h3 class="text-2xl font-bold">Best Workplaces 2022</h3>
-                  <p class="text-xl">Inc Magazine</p>
+                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center h-[200px]">
+                  <h3 class="text-xl font-bold">Penghargaan Klinik Terbaik 2022</h3>
+                  <p class="text-xl">Asosiasi Dokter Gigi Indonesia</p>
                 </div>
-                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center">
-                  <h3 class="text-2xl font-bold">Best Workplaces 2022</h3>
-                  <p class="text-xl">Inc Magazine</p>
+                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center h-[200px]">
+                  <h3 class="text-2xl font-bold">Pelayanan Pasien Terbaik</h3>
+                  <p class="text-xl">Majalah Kesehatan</p>
                 </div>
               </div>
               <div class="w-full sm:w-[48%] md:w-[47%]">
-                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center">
-                  <h3 class="text-2xl font-bold">Best Workplaces 2022</h3>
-                  <p class="text-xl">Inc Magazine</p>
+                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center h-[200px]">
+                  <h3 class="text-2xl font-bold">Dokter Gigi Profesional</h3>
+                  <p class="text-xl">Pengakuan Nasional</p>
                 </div>
-                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center">
-                  <h3 class="text-2xl font-bold">Best Workplaces 2022</h3>
-                  <p class="text-xl">Inc Magazine</p>
+                <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center h-[200px]">
+                  <h3 class="text-2xl font-bold">Teknologi Terkini</h3>
+                  <p class="text-xl">Layanan Inovatif</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="img-about w-full md:w-[80%] lg:w-[35%] mx-auto lg:mx-0 relative lg:relative mt-10 lg:mt-0">
-            <img src="test1.png" alt="" class="w-full md:w-[90%] mx-auto lg:absolute lg:top-20">
+            <img src="test1.png" alt="Klinik Gigi Kami" class="w-full md:w-[90%] mx-auto lg:absolute lg:top-40">
           </div>
         </div>
       </div>
     </section>
+    
 
 
     <section id="daftar" class="mx-auto my-16 pt-40 mb-32 w-full">
@@ -550,65 +553,65 @@
                       <!-- FAQ Item 1 -->
                       <div class="faq-item">
                           <div class="flex gap-16 items-center cursor-pointer">
-                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Do you have a referral program?</p>
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Apakah klinik memiliki program referensi pasien?</p>
                               <span class="transition-transform duration-300">
                                   <i class="fa-solid fa-arrow-down"></i>
                               </span>
                           </div>
                           <div class="faq-answer pl-4 text-gray-200">
-                              <p class="py-4">Yes, we have a referral program. You can earn rewards by referring new customers to our services. Contact our support team for more details.</p>
+                              <p class="py-4">Ya, kami memiliki program referensi pasien. Anda bisa mendapatkan manfaat khusus dengan merekomendasikan klinik kami kepada orang lain. Hubungi staf kami untuk informasi lebih lanjut.</p>
                           </div>
                       </div>
-
+  
                       <!-- FAQ Item 2 -->
                       <div class="faq-item">
                           <div class="flex gap-16 items-center cursor-pointer">
-                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">How do I schedule an appointment?</p>
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Bagaimana cara membuat janji temu?</p>
                               <span class="transition-transform duration-300">
                                   <i class="fa-solid fa-arrow-down"></i>
                               </span>
                           </div>
                           <div class="faq-answer pl-4 text-gray-200">
-                              <p class="py-4">You can schedule an appointment through our website or by calling our office directly. We offer flexible scheduling options to accommodate your needs.</p>
+                              <p class="py-4">Anda dapat membuat janji temu melalui situs web kami atau langsung menghubungi klinik. Kami menyediakan jadwal yang fleksibel untuk memenuhi kebutuhan Anda.</p>
                           </div>
                       </div>
-
+  
                       <!-- FAQ Item 3 -->
                       <div class="faq-item">
                           <div class="flex gap-16 items-center cursor-pointer">
-                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">What insurance do you accept?</p>
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Apa jenis asuransi yang diterima oleh klinik?</p>
                               <span class="transition-transform duration-300">
                                   <i class="fa-solid fa-arrow-down"></i>
                               </span>
                           </div>
                           <div class="faq-answer pl-4 text-gray-200">
-                              <p class="py-4">We accept most major insurance providers. Please contact our office for specific information about your insurance coverage.</p>
+                              <p class="py-4">Klinik kami menerima berbagai jenis asuransi kesehatan. Silakan hubungi kami untuk memastikan apakah asuransi Anda dapat digunakan di klinik kami.</p>
                           </div>
                       </div>
-
+  
                       <!-- FAQ Item 4 -->
                       <div class="faq-item">
                           <div class="flex gap-16 items-center cursor-pointer">
-                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">What are your office hours?</p>
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Apa jam operasional klinik?</p>
                               <span class="transition-transform duration-300">
                                   <i class="fa-solid fa-arrow-down"></i>
                               </span>
                           </div>
                           <div class="faq-answer pl-4 text-gray-200">
-                              <p class="py-4">Our office is open Monday through Friday from 9 AM to 5 PM. We also offer extended hours on select days.</p>
+                              <p class="py-4">Klinik kami buka dari Senin hingga Jumat pukul 08.00 hingga 17.00, dan Sabtu pukul 08.00 hingga 13.00. Untuk layanan darurat, silakan hubungi nomor hotline kami.</p>
                           </div>
                       </div>
-
+  
                       <!-- FAQ Item 5 -->
                       <div class="faq-item">
                           <div class="flex gap-16 items-center cursor-pointer">
-                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Do you offer emergency services?</p>
+                              <p class="text-xl md:text-4xl font-medium border-b-2 md:w-[80%] pb-2">Apakah klinik menyediakan layanan darurat?</p>
                               <span class="transition-transform duration-300">
                                   <i class="fa-solid fa-arrow-down"></i>
                               </span>
                           </div>
                           <div class="faq-answer pl-4 text-gray-200">
-                              <p class="py-4">Yes, we provide emergency services. Please call our emergency hotline for immediate assistance outside regular office hours.</p>
+                              <p class="py-4">Ya, kami menyediakan layanan darurat untuk masalah gigi. Silakan hubungi hotline darurat kami untuk bantuan segera.</p>
                           </div>
                       </div>
                   </div>
@@ -617,84 +620,88 @@
       </div>
   </section>
   
- <section id="Testimonials" class="mx-auto my-16 mb-32 w-full">
+  
+  <section id="testimonials" class="mx-auto my-16 mb-32 pt-40 w-full">
     <div class="container p-5 w-full">
         <div class="bg-gradient-to-r from-blue-500 to-blue-300 rounded-lg p-5">
             <h1 class="text-center font-bold text-4xl mb-10 text-gray-800">Testimonials</h1>
             <div class="owl-carousel owl-theme">
-              <!-- Dokter 1 -->
-       <div class="item px-2">
-         <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-             <div class="img flex justify-center relative">
-              <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
-             </div>
-             <div class="content mt-5 text-white">
-              <h1 class="text-xl text-center font-bold text-white">Albert Einstein</h1>
-              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi debitis explicabo. Perferendis tempora a similique tempore repellendus molestiae ullam nostrum quaerat quasi aut eius unde, maxime inventore iusto dolorum.</p>
-              <div class="media-sosial flex justify-center mt-5 gap-5">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-x-twitter"></i>
-                <i class="fa-brands fa-facebook-f"></i>
+              <!-- Pasien 1 -->
+              <div class="item px-2">
+                <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-[450px]">
+                    <div class="img flex justify-center relative">
+                        <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
+                    </div>
+                    <div class="content mt-5 text-white">
+                        <h1 class="text-xl text-center font-bold text-white">Hendra Wijaya</h1>
+                        <p class="text-justify">"Layanan di klinik gigi ini sangat memuaskan! Dokternya sangat ramah dan menjelaskan semua prosedur dengan jelas. Saya sangat merekomendasikan klinik ini kepada teman dan keluarga."</p>
+                        <div class="media-sosial flex justify-center mt-5 gap-5">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                    </div>
+                </div>
               </div>
-             </div>
-         </div>
-     </div>
 
-     <!-- Dokter 2 -->
-     <div class="item px-2">
-      <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div class="img flex justify-center relative">
-         <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
-        </div>
-        <div class="content mt-5 text-white">
-         <h1 class="text-xl text-center font-bold text-white">Albert gokil</h1>
-         <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi debitis explicabo. Perferendis tempora a similique tempore repellendus molestiae ullam nostrum quaerat quasi aut eius unde, maxime inventore iusto dolorum.</p>
-         <div class="media-sosial flex justify-center mt-5 gap-5">
-           <i class="fa-brands fa-instagram"></i>
-           <i class="fa-brands fa-x-twitter"></i>
-           <i class="fa-brands fa-facebook-f"></i>
-         </div>
-        </div>
-    </div>
-     </div>
+              <!-- Pasien 2 -->
+              <div class="item px-2">
+                <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300  h-[450px]">
+                    <div class="img flex justify-center relative">
+                        <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
+                    </div>
+                    <div class="content mt-5 text-white">
+                        <h1 class="text-xl text-center font-bold text-white">Anita Pratiwi</h1>
+                        <p class="text-justify">"Saya sangat senang dengan hasil perawatan gigi saya. Klinik ini sangat profesional dan peralatannya lengkap. Gigi saya terasa lebih sehat dan bersih."</p>
+                        <div class="media-sosial flex justify-center mt-5 gap-5">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                    </div>
+                </div>
+              </div>
 
-     <!-- Dokter 3 -->
-     <div class="item px-2">
-      <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div class="img flex justify-center relative">
-         <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
-        </div>
-        <div class="content mt-5 text-white">
-         <h1 class="text-xl text-center font-bold text-white">Albert neilsen</h1>
-         <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi debitis explicabo. Perferendis tempora a similique tempore repellendus molestiae ullam nostrum quaerat quasi aut eius unde, maxime inventore iusto dolorum.</p>
-         <div class="media-sosial flex justify-center mt-5 gap-5">
-           <i class="fa-brands fa-instagram"></i>
-           <i class="fa-brands fa-x-twitter"></i>
-           <i class="fa-brands fa-facebook-f"></i>
-         </div>
-        </div>
-    </div>
-     </div>
-     <div class="item px-2">
-      <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div class="img flex justify-center relative">
-         <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
-        </div>
-        <div class="content mt-5 text-white">
-         <h1 class="text-xl text-center font-bold text-white">Albert Evos</h1>
-         <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi debitis explicabo. Perferendis tempora a similique tempore repellendus molestiae ullam nostrum quaerat quasi aut eius unde, maxime inventore iusto dolorum.</p>
-         <div class="media-sosial flex justify-center mt-5 gap-5">
-           <i class="fa-brands fa-instagram"></i>
-           <i class="fa-brands fa-x-twitter"></i>
-           <i class="fa-brands fa-facebook-f"></i>
-         </div>
-        </div>
-    </div>
-     </div>
-         </div>
+              <!-- Pasien 3 -->
+              <div class="item px-2">
+                <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-[450px]">
+                    <div class="img flex justify-center relative">
+                        <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
+                    </div>
+                    <div class="content mt-5 text-white">
+                        <h1 class="text-xl text-center font-bold text-white">Dewi Lestari</h1>
+                        <p class="text-justify">"Dokter giginya sangat teliti dan sabar dalam menangani saya. Saya merasa nyaman selama perawatan, dan hasilnya sangat memuaskan."</p>
+                        <div class="media-sosial flex justify-center mt-5 gap-5">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <!-- Pasien 4 -->
+              <div class="item px-2">
+                <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-[450px]">
+                    <div class="img flex justify-center relative">
+                        <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
+                    </div>
+                    <div class="content mt-5 text-white">
+                        <h1 class="text-xl text-center font-bold text-white">Rudi Hartono</h1>
+                        <p class="text-justify">"Perawatan tambal gigi di klinik ini sangat cepat dan tanpa rasa sakit. Klinik ini benar-benar memberikan pelayanan terbaik."</p>
+                        <div class="media-sosial flex justify-center mt-5 gap-5">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
 </section>
+
 
 <section id="lokasi" class="mx-auto my-16 mb-32 w-full">
   <div class="container p-5 w-full h-fit rounded-lg bg-gradient-to-tr from-purple to-blue">
@@ -737,6 +744,7 @@
   <script src="../src/index.js"></script>
   <script src="../src/carousel.js"></script>
   <script src="../src/faq.js"></script>
+  <script src="../src/navbar.js"></script>
   
 </body>
 

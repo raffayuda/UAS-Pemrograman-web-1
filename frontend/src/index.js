@@ -27,18 +27,18 @@ const ELEMENTS = {
 const TAB_CONTENT = {
   tombol1: {
     title: 'Transformasi Senyum Anda dengan Bedah Mulut',
-    description: 'Experience the life-changing power of a new smile.',
-    cards: ['Walkthroughs', 'Coachmark', 'In-app Messages'],
+    description: 'Bedah mulut membantu mengatasi berbagai masalah gigi dan mulut untuk kesehatan optimal dan senyum percaya diri.',
+    cards: ['Bedah Gigi Bungsu', 'Perbaikan Struktur Gigi', 'Penanganan Infeksi Gigi'],
     images: [
-      'test1.png',
-      'test.png',
-      'test2.png'
+      'path/to/bedah-1.jpg',
+      'path/to/bedah-2.jpg',
+      'path/to/bedah-3.jpg'
     ]
   },
   tombol2: {
-    title: 'Kawat Gigi',
-    description: 'Increase user engagement and stickiness with customizable loyalty programs, interactive stories, and more.',
-    cards: ['Loyalty Program', 'Streaks', 'Stories'],
+    title: 'Pemasangan Kawat Gigi',
+    description: 'Kami menyediakan pemasangan kawat gigi untuk memperbaiki susunan gigi agar lebih rapi dan sehat.',
+    cards: ['Konsultasi Awal', 'Pemasangan Kawat Gigi', 'Kontrol Rutin'],
     images: [
       'path/to/kawat-gigi-1.jpg',
       'path/to/kawat-gigi-2.jpg',
@@ -46,26 +46,27 @@ const TAB_CONTENT = {
     ]
   },
   tombol3: {
-    title: 'Perawatan Gigi',
-    description: 'Improve feature adoption and simplify the user onboarding process using walkthroughs, coachmark, and in-line widgets.',
-    cards: ['Walkthroughs', 'Coachmark', 'In-line Widget & Cards'],
+    title: 'Perawatan Saluran Akar',
+    description: 'Perawatan saluran akar membantu menyelamatkan gigi yang mengalami kerusakan parah agar tetap berfungsi.',
+    cards: ['Diagnosa Masalah Akar', 'Perawatan Saluran Akar', 'Restorasi Gigi'],
     images: [
-      'path/to/perawatan-1.jpg',
-      'path/to/perawatan-2.jpg',
-      'path/to/perawatan-3.jpg'
+      'path/to/saluran-akar-1.jpg',
+      'path/to/saluran-akar-2.jpg',
+      'path/to/saluran-akar-3.jpg'
     ]
   },
   tombol4: {
-    title: 'Pembersihan Gigi',
-    description: 'Unlock actionable insights into user preferences to understand why users churn and ship user-informed products using surveys and polls.',
-    cards: ['Surveys', 'Quizzes', 'Polls'],
+    title: 'Scaling dan Polishing',
+    description: 'Scaling dan polishing untuk membersihkan plak dan noda pada gigi, memberikan senyum yang lebih cerah.',
+    cards: ['Pembersihan Plak', 'Polishing Gigi', 'Pencegahan Karies'],
     images: [
-      'path/to/pembersihan-1.jpg',
-      'path/to/pembersihan-2.jpg',
-      'path/to/pembersihan-3.jpg'
+      'path/to/scaling-1.jpg',
+      'path/to/scaling-2.jpg',
+      'path/to/scaling-3.jpg'
     ]
   }
 };
+
 
 // Function to update button styles
 function updateButtonStyles(activeButton) {
