@@ -85,8 +85,8 @@
         <h1 class="md:text-5xl text-3xl font-bold text-black">Perawatan gigi terbaik, <span
             class="bg-gradient-to-r from-purple to-orange bg-clip-text text-transparent ease-in-out duration-300" id="change-teks"><br>Dengan teknologi terkini</span></h1>
         <p class="mt-5">Pengalaman Perawatan Gigi yang Lebih Nyaman dengan Teknologi Terbaru.</p>
-        <div>
-          <button class=" bg-purple py-3 px-4 rounded-3xl text-white mt-5">Booking</button>
+        <div class="mt-10 mb-10">
+          <a href="#daftar" class="bg-purple py-3 px-4 rounded-3xl text-white">Registrasi <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="img-content w-full md:w-3/5 md:translate-y-10">
@@ -433,13 +433,13 @@
       <div class="container p-5 w-full">
         <h1 class="text-center font-bold text-4xl mb-10">Tentang Kami</h1>
         <div class="flex flex-wrap gap-5 lg:gap-0">
-          <div class="flex flex-wrap w-full lg:w-[50%] md:w-full">
-            <div class="w-full lg:w-[50%] md:w-[100%]  mx-auto lg:ml-10">
-              <h1 class="text-md md:text-xl font-semibold font-serif text-center lg:text-left">Berdedikasi untuk Memberikan Perawatan Gigi Terbaik dengan Sentuhan Kekeluargaan, 
-                Mengutamakan Kenyamanan dan Kepuasan Setiap Pasien.</h1>
-            </div>
+          <div class="w-full lg:w-[60%] md:w-[100%]  mx-auto lg:ml-10">
+            <h1 class="text-md md:text-xl w-full font-semibold font-serif text-center lg:text-left">Berdedikasi untuk Memberikan Perawatan Gigi Terbaik dengan Sentuhan Kekeluargaan, 
+              Mengutamakan Kenyamanan dan Kepuasan Setiap Pasien.</h1>
+          </div>
+          <div class="flex flex-wrap w-full lg:w-[60%] md:w-full">
             <div class="flex flex-wrap w-full mt-10 md:mt-20 gap-2 justify-center">
-              <div class="w-full sm:w-[48%] md:w-[47%]">
+              <div class="w-full sm:w-[48%] md:w-[47%] lg:w-[40%]">
                 <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center h-[200px]">
                   <h3 class="text-xl font-bold md:text-xl">Penghargaan Klinik Terbaik 2022</h3>
                   <p class="text-xl">Asosiasi Dokter Gigi Indonesia</p>
@@ -449,7 +449,7 @@
                   <p class="text-xl">Majalah Kesehatan</p>
                 </div>
               </div>
-              <div class="w-full sm:w-[48%] md:w-[47%]">
+              <div class="w-full sm:w-[48%] md:w-[47%] lg:w-[40%]">
                 <div class="rounded-3xl px-5 py-10 mb-5 bg-gradient-to-r from-card-purple to-blue text-center h-[200px]">
                   <h3 class="text-2xl font-bold md:text-xl">Dokter Gigi Profesional dan Berbakat</h3>
                   <p class="text-xl">Pengakuan Nasional</p>
@@ -461,8 +461,8 @@
               </div>
             </div>
           </div>
-          <div class="img-about w-full lg:w-[50%] md:w-full mx-auto lg:mx-0 mt-10 lg:mt-0 bg-red-400 p-10">
-            <img src="images/about.jpg" alt="Klinik Gigi Kami" class="w-full md:w-[90%] mx-auto ">
+          <div class="img-about w-full lg:w-[40%] h-full lg:translate-y-20 lg:h-[400px] md:w-full mx-auto lg:mx-0 mt-10 lg:mt-0">
+            <img src="images/about.jpg" alt="Klinik Gigi Kami" class="w-full md:w-[90%] h-full mx-auto ">
           </div>
         </div>
       </div>
@@ -475,65 +475,67 @@
         <div class="text">
           <h1 class="text-center font-bold text-4xl mb-10 text-white">Daftarkan Jadwal Anda</h1>
           <p class="text-lg text-white text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptatem facere blanditiis eaque corporis tenetur voluptate ducimus ratione earum. Blanditiis!
+            Daftarkan diri Anda sekarang untuk mendapatkan perawatan gigi berkualitas dari tim dokter gigi profesional kami. Kami siap memberikan pelayanan terbaik untuk kesehatan gigi Anda.
           </p>
         </div>
-        <div class="form rounded-xl p-5 w-full md:w-[50%] left-1/2 transform -translate-x-1/2 absolute bg-white md:top-44 shadow-lg">
-          <div class="border-b-2 pb-3 mb-5">
-            <h1 class="text-2xl font-bold text-gray-800">Isi form untuk mendaftar di klinik kami 😊</h1>
+        <form>
+          <div class="form rounded-xl p-5 w-full md:w-[50%] left-1/2 transform -translate-x-1/2 absolute bg-white md:top-44 shadow-lg">
+            <div class="border-b-2 pb-3 mb-5">
+              <h1 class="text-2xl font-bold text-gray-800">Isi form untuk mendaftar di klinik kami 😊</h1>
+            </div>
+            <div class="form-control space-y-4">
+              <div class="flex gap-2">
+                <div class="w-full">
+                  <div>
+                    <label for="nama" class="block font-medium text-gray-700">Nama Lengkap</label>
+                    <input id="nama" type="text" placeholder="Nama Lengkap" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                  </div>
+                  <div>
+                    <label for="telepon" class="block font-medium text-gray-700">No Telepon</label>
+                    <input id="telepon" type="text" placeholder="Nomor Telepon" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                  </div>
+                  <div>
+                </div>
+                  <label for="email" class="block font-medium text-gray-700">Alamat Email</label>
+                  <input id="email" type="email" placeholder="Alamat Email" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
+                <div class="w-full">
+                  <div>
+                    <label for="tanggal" class="block font-medium text-gray-700">Tanggal Kunjungan</label>
+                    <input id="tanggal" type="date" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                  </div>
+                  <div>
+                    <label for="waktu" class="block font-medium text-gray-700">Waktu Kunjungan</label>
+                    <select id="waktu" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                      <option value="">Pilih Waktu</option>
+                      <option value="08:00">08:00 - 10:00</option>
+                      <option value="10:00">10:00 - 12:00</option>
+                      <option value="13:00">13:00 - 15:00</option>
+                      <option value="15:00">15:00 - 17:00</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="jenis" class="block font-medium text-gray-700">Jenis Perawatan</label>
+                    <select id="jenis" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                      <option value="">Pilih Perawatan</option>
+                      <option value="konsultasi">Konsultasi</option>
+                      <option value="tambal">Tambal Gigi</option>
+                      <option value="cabut">Cabut Gigi</option>
+                      <option value="pembersihan">Pembersihan Gigi</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="catatan" class="block font-medium text-gray-700">Catatan Tambahan</label>
+                <textarea id="catatan" placeholder="Masukkan catatan tambahan jika ada" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+              </div>
+              <div class="text-center mt-5">
+                <button class="bg-blue-500 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-600 transition">Kirim</button>
+              </div>
+            </div>
           </div>
-          <div class="form-control space-y-4">
-            <div class="flex gap-2">
-              <div class="w-full">
-                <div>
-                  <label for="nama" class="block font-medium text-gray-700">Nama Lengkap</label>
-                  <input id="nama" type="text" placeholder="Nama Lengkap" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                </div>
-                <div>
-                  <label for="telepon" class="block font-medium text-gray-700">No Telepon</label>
-                  <input id="telepon" type="text" placeholder="Nomor Telepon" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                </div>
-                <div>
-              </div>
-                <label for="email" class="block font-medium text-gray-700">Alamat Email</label>
-                <input id="email" type="email" placeholder="Alamat Email" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
-              </div>
-              <div class="w-full">
-                <div>
-                  <label for="tanggal" class="block font-medium text-gray-700">Tanggal Kunjungan</label>
-                  <input id="tanggal" type="date" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                </div>
-                <div>
-                  <label for="waktu" class="block font-medium text-gray-700">Waktu Kunjungan</label>
-                  <select id="waktu" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                    <option value="">Pilih Waktu</option>
-                    <option value="08:00">08:00 - 10:00</option>
-                    <option value="10:00">10:00 - 12:00</option>
-                    <option value="13:00">13:00 - 15:00</option>
-                    <option value="15:00">15:00 - 17:00</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="jenis" class="block font-medium text-gray-700">Jenis Perawatan</label>
-                  <select id="jenis" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                    <option value="">Pilih Perawatan</option>
-                    <option value="konsultasi">Konsultasi</option>
-                    <option value="tambal">Tambal Gigi</option>
-                    <option value="cabut">Cabut Gigi</option>
-                    <option value="pembersihan">Pembersihan Gigi</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div>
-              <label for="catatan" class="block font-medium text-gray-700">Catatan Tambahan</label>
-              <textarea id="catatan" placeholder="Masukkan catatan tambahan jika ada" class="border-gray-300 border-2 p-2 rounded-lg w-full focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
-            </div>
-            <div class="text-center mt-5">
-              <button class="bg-blue-500 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-600 transition">Kirim</button>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </section>
     
@@ -630,10 +632,10 @@
               <div class="item px-2">
                 <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-[450px]">
                     <div class="img flex justify-center relative">
-                        <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
+                        <img src="images/testi1.jpg" alt="" class="rounded-full" style="width: 50%;">
                     </div>
                     <div class="content mt-5 text-white">
-                        <h1 class="text-xl text-center font-bold text-white">Hendra Wijaya</h1>
+                        <h1 class="text-xl text-center font-bold text-white">A. Garnacho</h1>
                         <p class="text-justify">"Layanan di klinik gigi ini sangat memuaskan! Dokternya sangat ramah dan menjelaskan semua prosedur dengan jelas."</p>
                         <div class="media-sosial flex justify-center mt-5 gap-5">
                             <i class="fa-brands fa-instagram"></i>
@@ -648,10 +650,10 @@
               <div class="item px-2">
                 <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300  h-[450px]">
                     <div class="img flex justify-center relative">
-                        <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
+                        <img src="images/testi2.jpg" alt="" class="rounded-full" style="width: 50%;">
                     </div>
                     <div class="content mt-5 text-white">
-                        <h1 class="text-xl text-center font-bold text-white">Anita Pratiwi</h1>
+                        <h1 class="text-xl text-center font-bold text-white">P. Dybala</h1>
                         <p class="text-justify">"Saya sangat senang dengan hasil perawatan gigi saya. Klinik ini sangat profesional dan peralatannya lengkap. Gigi saya terasa lebih sehat dan bersih."</p>
                         <div class="media-sosial flex justify-center mt-5 gap-5">
                             <i class="fa-brands fa-instagram"></i>
@@ -666,10 +668,10 @@
               <div class="item px-2">
                 <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-[450px]">
                     <div class="img flex justify-center relative">
-                        <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
+                        <img src="images/testi3.jpg" alt="" class="rounded-full" style="width: 50%;">
                     </div>
                     <div class="content mt-5 text-white">
-                        <h1 class="text-xl text-center font-bold text-white">Dewi Lestari</h1>
+                        <h1 class="text-xl text-center font-bold text-white">J. Alvarez</h1>
                         <p class="text-justify">"Dokter giginya sangat teliti dan sabar dalam menangani saya. Saya merasa nyaman selama perawatan, dan hasilnya sangat memuaskan."</p>
                         <div class="media-sosial flex justify-center mt-5 gap-5">
                             <i class="fa-brands fa-instagram"></i>
@@ -684,10 +686,10 @@
               <div class="item px-2">
                 <div class="bg-purple p-5 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-[450px]">
                     <div class="img flex justify-center relative">
-                        <img src="testi.jpg" alt="" class="rounded-full" style="width: 50%;">
+                        <img src="images/testi4.jpg" alt="" class="rounded-full" style="width: 50%;">
                     </div>
                     <div class="content mt-5 text-white">
-                        <h1 class="text-xl text-center font-bold text-white">Rudi Hartono</h1>
+                        <h1 class="text-xl text-center font-bold text-white">L. Yamal</h1>
                         <p class="text-justify">"Perawatan tambal gigi di klinik ini sangat cepat dan tanpa rasa sakit. Klinik ini benar-benar memberikan pelayanan terbaik."</p>
                         <div class="media-sosial flex justify-center mt-5 gap-5">
                             <i class="fa-brands fa-instagram"></i>
