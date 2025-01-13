@@ -183,163 +183,170 @@
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
-                <div class="nav-profile-image">
-                  <img src="assets/images/faces/face1.jpg" alt="profile" />
-                  <span class="login-status online"></span>
-                  <!--change to offline or busy as needed-->
-                </div>
-                <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">Admin</span>
-                  <span class="text-secondary text-small">Developer</span>
-                </div>
-                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">
-                <span class="menu-title">Dashboard</span>
-                <i class="mdi mdi-home menu-icon"></i>
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="booking.html">
-                <span class="menu-title">Booking</span>
-                <i class="mdi mdi-file-document-box menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dokter.html">
-                <span class="menu-title">Dokter</span>
-                <i class="mdi mdi-file-document-box menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="layanan.html">
-                <span class="menu-title">Layanan</span>
-                <i class="mdi mdi-file-document-box menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="booking.html">
-                <span class="menu-title">Logout</span>
-                <i class="mdi mdi-file-document-box menu-icon"></i>
-              </a>
-            </li>
-            
-          </ul>
+            <ul class="nav">
+              <li class="nav-item nav-profile">
+                <a href="#" class="nav-link">
+                  <div class="nav-profile-image">
+                    <img src="assets/images/faces/face1.jpg" alt="profile" />
+                    <span class="login-status online"></span>
+                    <!--change to offline or busy as needed-->
+                  </div>
+                  <div class="nav-profile-text d-flex flex-column">
+                    <span class="font-weight-bold mb-2">Admin</span>
+                    <span class="text-secondary text-small">Developer</span>
+                  </div>
+                  <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <span class="menu-title">Dashboard</span>
+                  <i class="mdi mdi-home menu-icon"></i>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="booking.html">
+                  <span class="menu-title">Booking</span>
+                  <i class="fa-regular fa-calendar-plus menu-icon"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dokter.html">
+                  <span class="menu-title">Dokter</span>
+                  <i class="fa-solid fa-stethoscope menu-icon"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="layanan.html">
+                  <span class="menu-title">Layanan</span>
+                  <i class="fa-solid fa-users-gear menu-icon"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="booking.html">
+                  <span class="menu-title">Logout</span>
+                  <i class="fa-solid fa-right-from-bracket menu-icon"></i>
+                </a>
+              </li>
+              
+            </ul>
         </nav>
         <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="page-header row">
-                <div class="row mb-3">
-                    <h3 class="page-title">
-                      <span class="page-title-icon bg-gradient-primary text-white me-2">
-                        <i class="mdi mdi-home"></i>
-                      </span> Daftar Dokter
-                    </h3>
-                </div>
-              <div class="row">
-                <div class="col-lg-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h4 class="card-title">Dokter Management</h4>
-                                <button class="btn btn-success btn-sm" onclick="showForm()">
-                                    <i class="fa-solid fa-user-plus"></i> Add Visitor
-                                </button>
-                            </div>
-            
-                            <!-- Form -->
-                            <div id="visitorForm" class="mb-4" style="display: none;">
-                                <form id="form" class="row g-3">
-                                    <input type="hidden" id="editId">
-                                    <div class="col-md-6">
-                                        <label class="form-label">Nama</label>
-                                        <input type="text" class="form-control" id="name" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">No Telpon</label>
-                                        <input type="tel" class="form-control" id="phone" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Alamat</label>
-                                        <textarea class="form-control" id="alamat" required></textarea>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Jenis Kelamin</label>
-                                        <select class="form-select" aria-label="Default select example" id="jk">
-                                            <option value="Laki - Laki">Laki - Laki</option>
-                                            <option value="Perempuan">Perempuan</option>
-                                          </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Spesialis</label>
-                                        <input type="text" class="form-control" id="spesialis" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="button" class="btn btn-secondary" onclick="hideForm()">Cancel</button>
-                                    </div>
-                                </form>
-                            </div>
-            
-                            <!-- Table -->
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nama</th>
-                                            <th>Spesialis</th>
-                                            <th>No Telpon</th>
-                                            <th>Email</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="visitorTableBody">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- View Modal -->
-                <div class="modal fade" id="viewModal" tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Dokter Detail</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body" id="viewModalBody">
-                            </div>
-                        </div>
-                    </div>
+            <div class="content-wrapper">
+              <div class="page-header row">
+                  <div class="row mb-3">
+                      <h3 class="page-title">
+                        <span class="page-title-icon bg-gradient-primary text-white me-2">
+                          <i class="mdi mdi-home"></i>
+                        </span> Booking
+                      </h3>
                   </div>
+                <div class="row">
+                  <div class="col-lg-12 grid-margin stretch-card">
+                      <div class="card">
+                          <div class="card-body">
+                              <div class="d-flex justify-content-between align-items-center mb-4">
+                                  <h4 class="card-title">Visitor Management</h4>
+                                  <button class="btn btn-success btn-sm" onclick="showForm()">
+                                      <i class="fa-solid fa-user-plus"></i> Add Visitor
+                                  </button>
+                              </div>
+              
+                              <!-- Form -->
+                              <div id="visitorForm" class="mb-4" style="display: none;">
+                                  <form id="form" class="row g-3">
+                                      <input type="hidden" id="editId">
+                                      <div class="col-md-6">
+                                          <label class="form-label">Nama</label>
+                                          <input type="text" class="form-control" id="name" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <label class="form-label">No Telpon</label>
+                                          <input type="tel" class="form-control" id="phone" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <label class="form-label">Email</label>
+                                          <input type="email" class="form-control" id="email" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <label class="form-label">Tanggal Kunjungan</label>
+                                          <input type="date" class="form-control" id="visitDate" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <label class="form-label">Waktu Kunjungan</label>
+                                          <select class="form-select" aria-label="Default select example" id="waktu">
+                                              <option value="08:00 - 10:00">08:00 - 10:00</option>
+                                              <option value="10:00 - 12:00">10:00 - 12:00</option>
+                                              <option value="13:00 - 15:00">13:00 - 15:00</option>
+                                              <option value="15:00 - 17:00">15:00 - 17:00</option>
+                                            </select>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <label class="form-label">Jenis Perawatan</label>
+                                          <select class="form-select" aria-label="Default select example" id="perawatan">
+                                              <option value="Konsultasi">Konsultasi</option>
+                                              <option value="Tambal Gigi">Tambal Gigi</option>
+                                              <option value="Cabut Gigi">Cabut Gigi</option>
+                                              <option value="Pembersihan Gigi">Pembersihan Gigi</option>
+                                            </select>
+                                      </div>
+                                      <div class="col-12">
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                          <button type="button" class="btn btn-secondary" onclick="hideForm()">Cancel</button>
+                                      </div>
+                                  </form>
+                              </div>
+              
+                              <!-- Table -->
+                              <div class="table-responsive">
+                                  <table class="table table-striped">
+                                      <thead>
+                                          <tr>
+                                              <th>#</th>
+                                              <th>Nama</th>
+                                              <th>No Telpon</th>
+                                              <th>Email</th>
+                                              <th>Tanggal Kunjungan</th>
+                                              <th>Action</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody id="visitorTableBody">
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <!-- View Modal -->
+                  <div class="modal fade" id="viewModal" tabindex="-1">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title">Visitor Details</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                              </div>
+                              <div class="modal-body" id="viewModalBody">
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
               </div>
+              
             </div>
-            
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+              </div>
+            </footer>
+            <!-- partial -->
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
-            </div>
-          </footer>
-          <!-- partial -->
-        </div>
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
