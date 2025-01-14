@@ -207,7 +207,7 @@
               
               <li class="nav-item">
                 <a class="nav-link" href="booking.html">
-                  <span class="menu-title">Booking</span>
+                  <span class="menu-title">Penjadwalan</span>
                   <i class="fa-regular fa-calendar-plus menu-icon"></i>
                 </a>
               </li>
@@ -218,8 +218,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="layanan.html">
-                  <span class="menu-title">Layanan</span>
+                <a class="nav-link" href="pasien.html">
+                  <span class="menu-title">Pasien</span>
                   <i class="fa-solid fa-users-gear menu-icon"></i>
                 </a>
               </li>
@@ -240,7 +240,7 @@
                     <h3 class="page-title">
                       <span class="page-title-icon bg-gradient-primary text-white me-2">
                         <i class="mdi mdi-home"></i>
-                      </span> Booking
+                      </span> Jadwal Pasien
                     </h3>
                 </div>
               <div class="row">
@@ -319,6 +319,61 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Form Modal -->
+        <div class="modal fade" id="formModal" tabindex="-1">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="formModalTitle">Add New Appointment</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form id="visitorForm">
+                          <input type="hidden" id="editId">
+                          <div class="mb-3">
+                              <label class="form-label">Nama</label>
+                              <input type="text" class="form-control" id="name" required>
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">No Telpon</label>
+                              <input type="tel" class="form-control" id="phone" required>
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">Email</label>
+                              <input type="email" class="form-control" id="email" required>
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">Tanggal Kunjungan</label>
+                              <input type="date" class="form-control" id="visitDate" required>
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">Waktu Kunjungan</label>
+                              <select class="form-select" id="waktu">
+                                  <option value="08:00 - 10:00">08:00 - 10:00</option>
+                                  <option value="10:00 - 12:00">10:00 - 12:00</option>
+                                  <option value="13:00 - 15:00">13:00 - 15:00</option>
+                                  <option value="15:00 - 17:00">15:00 - 17:00</option>
+                              </select>
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">Jenis Perawatan</label>
+                              <select class="form-select" id="perawatan">
+                                  <option value="Konsultasi">Konsultasi</option>
+                                  <option value="Tambal Gigi">Tambal Gigi</option>
+                                  <option value="Cabut Gigi">Cabut Gigi</option>
+                                  <option value="Pembersihan Gigi">Pembersihan Gigi</option>
+                              </select>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
             
                 <!-- View Modal -->
                 <div class="modal fade" id="viewModal" tabindex="-1">
@@ -341,8 +396,8 @@
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2025. All rights reserved Raffa Yuda Pratama.</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Made with ⭐</span>
             </div>
           </footer>
           <!-- partial -->

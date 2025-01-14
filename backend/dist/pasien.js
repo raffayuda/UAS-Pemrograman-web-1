@@ -2,12 +2,12 @@
 let visitors = [
     {
         id: 1,
-        name: 'Herman Beck',
+        name: 'Agus Boday',
         phone: '08889623663',
         email: 'raffa@gmail.com',
-        visitDate: '2025-05-15',
-        waktu: '08:00 - 10:00',
         perawatan: 'Cabut Gigi',
+        alamat: 'Bogor Jawa Barat',
+        status: 'Selesai',
     }
 ];
 
@@ -24,7 +24,8 @@ function renderTable() {
             <td>${visitor.name}</td>
             <td>${visitor.phone}</td>
             <td>${visitor.email}</td>
-            <td>${formatDate(visitor.visitDate)}</td>
+            <td>${visitor.perawatan}</td>
+            <td>${visitor.status}</td>
             <td>
                 <button onclick="viewVisitor(${visitor.id})" class="btn btn-info btn-sm">
                     <i class="fa-solid fa-eye"></i>
@@ -65,9 +66,9 @@ form.addEventListener('submit', function(e) {
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
-        visitDate: document.getElementById('visitDate').value,
-        waktu: document.getElementById('waktu').value,
-        perawatan: document.getElementById('perawatan').value
+        perawatan: document.getElementById('perawatan').value,
+        alamat: document.getElementById('alamat').value,
+        status: document.getElementById('status').value
     };
 
     const editId = document.getElementById('editId').value;
@@ -99,15 +100,15 @@ function viewVisitor(id) {
             <dt class="col-sm-4">Email</dt>
             <dd class="col-sm-8">${visitor.email}</dd>
             
-            <dt class="col-sm-4">Tanggal Kunjungan</dt>
-            <dd class="col-sm-8">${formatDate(visitor.visitDate)}</dd>
-
-            <dt class="col-sm-4">Waktu Kunjungan</dt>
-            <dd class="col-sm-8">${visitor.waktu}</dd>
-
-            <dt class="col-sm-4">Waktu Kunjungan</dt>
+            <dt class="col-sm-4">Perawatan</dt>
             <dd class="col-sm-8">${visitor.perawatan}</dd>
-            </dl>
+
+            <dt class="col-sm-4">Alamat</dt>
+            <dd class="col-sm-8">${visitor.alamat}</dd>
+
+            <dt class="col-sm-4">Status</dt>
+            <dd class="col-sm-8">${visitor.status}</dd>
+        </dl>
     `;
     viewModal.show();
 }
@@ -118,7 +119,9 @@ function editVisitor(id) {
     document.getElementById('name').value = visitor.name;
     document.getElementById('phone').value = visitor.phone;
     document.getElementById('email').value = visitor.email;
-    document.getElementById('visitDate').value = visitor.visitDate;
+    document.getElementById('perawatan').value = visitor.perawatan;
+    document.getElementById('alamat').value = visitor.alamat; // Add this line
+    document.getElementById('status').value = visitor.status; // Add this line
     showForm();
 }
 

@@ -207,7 +207,7 @@
               
               <li class="nav-item">
                 <a class="nav-link" href="booking.html">
-                  <span class="menu-title">Booking</span>
+                  <span class="menu-title">Penjadwalan</span>
                   <i class="fa-regular fa-calendar-plus menu-icon"></i>
                 </a>
               </li>
@@ -218,8 +218,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="layanan.html">
-                  <span class="menu-title">Layanan</span>
+                <a class="nav-link" href="pasien.html">
+                  <span class="menu-title">Pasien</span>
                   <i class="fa-solid fa-users-gear menu-icon"></i>
                 </a>
               </li>
@@ -240,7 +240,7 @@
                       <h3 class="page-title">
                         <span class="page-title-icon bg-gradient-primary text-white me-2">
                           <i class="mdi mdi-home"></i>
-                        </span> Booking
+                        </span> Profil Dokter
                       </h3>
                   </div>
                 <div class="row">
@@ -248,9 +248,9 @@
                       <div class="card">
                           <div class="card-body">
                               <div class="d-flex justify-content-between align-items-center mb-4">
-                                  <h4 class="card-title">Visitor Management</h4>
+                                  <h4 class="card-title">Dokter Management</h4>
                                   <button class="btn btn-success btn-sm" onclick="showForm()">
-                                      <i class="fa-solid fa-user-plus"></i> Add Visitor
+                                      <i class="fa-solid fa-user-plus"></i> Add Dokter
                                   </button>
                               </div>
               
@@ -270,13 +270,10 @@
                                           <label class="form-label">Email</label>
                                           <input type="email" class="form-control" id="email" required>
                                       </div>
+                                      
                                       <div class="col-md-6">
-                                          <label class="form-label">Tanggal Kunjungan</label>
-                                          <input type="date" class="form-control" id="visitDate" required>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <label class="form-label">Waktu Kunjungan</label>
-                                          <select class="form-select" aria-label="Default select example" id="waktu">
+                                          <label class="form-label">Jadwal</label>
+                                          <select class="form-select" aria-label="Default select example" id="jadwal">
                                               <option value="08:00 - 10:00">08:00 - 10:00</option>
                                               <option value="10:00 - 12:00">10:00 - 12:00</option>
                                               <option value="13:00 - 15:00">13:00 - 15:00</option>
@@ -284,13 +281,15 @@
                                             </select>
                                       </div>
                                       <div class="col-md-6">
-                                          <label class="form-label">Jenis Perawatan</label>
-                                          <select class="form-select" aria-label="Default select example" id="perawatan">
-                                              <option value="Konsultasi">Konsultasi</option>
-                                              <option value="Tambal Gigi">Tambal Gigi</option>
-                                              <option value="Cabut Gigi">Cabut Gigi</option>
-                                              <option value="Pembersihan Gigi">Pembersihan Gigi</option>
+                                          <label class="form-label">Jenis Kelamin</label>
+                                          <select class="form-select" aria-label="Default select example" id="jk">
+                                              <option value="Laki - Laki">Laki - Laki</option>
+                                              <option value="Perempuan">Perempuan</option>
                                             </select>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <label class="form-label">Spesialis</label>
+                                         <input type="text" class="form-control" id="spesialis">
                                       </div>
                                       <div class="col-12">
                                           <button type="submit" class="btn btn-primary">Submit</button>
@@ -308,7 +307,7 @@
                                               <th>Nama</th>
                                               <th>No Telpon</th>
                                               <th>Email</th>
-                                              <th>Tanggal Kunjungan</th>
+                                              <th>Spesialis</th>
                                               <th>Action</th>
                                           </tr>
                                       </thead>
@@ -341,8 +340,8 @@
             <!-- partial:partials/_footer.html -->
             <footer class="footer">
               <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2025. All rights reserved Raffa Yuda Pratama.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Made with ⭐</span>
               </div>
             </footer>
             <!-- partial -->

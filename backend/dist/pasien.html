@@ -207,7 +207,7 @@
             
             <li class="nav-item">
               <a class="nav-link" href="booking.html">
-                <span class="menu-title">Booking</span>
+                <span class="menu-title">Penjadwalan</span>
                 <i class="fa-regular fa-calendar-plus menu-icon"></i>
               </a>
             </li>
@@ -218,8 +218,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="layanan.html">
-                <span class="menu-title">Layanan</span>
+              <a class="nav-link" href="pasien.html">
+                <span class="menu-title">Pasien</span>
                 <i class="fa-solid fa-users-gear menu-icon"></i>
               </a>
             </li>
@@ -270,27 +270,26 @@
                                           <label class="form-label">Email</label>
                                           <input type="email" class="form-control" id="email" required>
                                       </div>
+                                      
                                       <div class="col-md-6">
-                                          <label class="form-label">Tanggal Kunjungan</label>
-                                          <input type="date" class="form-control" id="visitDate" required>
+                                        <label class="form-label">Perawatan</label>
+                                        <select class="form-select" aria-label="Default select example" id="perawatan">
+                                          <option value="Konsultasi">Konsultasi</option>
+                                          <option value="Tambal Gigi">Tambal Gigi</option>
+                                          <option value="Cabut Gigi">Cabut Gigi</option>
+                                          <option value="Pembersihan Gigi">Pembersihan Gigi</option>
+                                        </select>
                                       </div>
                                       <div class="col-md-6">
-                                          <label class="form-label">Waktu Kunjungan</label>
-                                          <select class="form-select" aria-label="Default select example" id="waktu">
-                                              <option value="08:00 - 10:00">08:00 - 10:00</option>
-                                              <option value="10:00 - 12:00">10:00 - 12:00</option>
-                                              <option value="13:00 - 15:00">13:00 - 15:00</option>
-                                              <option value="15:00 - 17:00">15:00 - 17:00</option>
-                                            </select>
+                                          <label class="form-label">Status</label>
+                                          <select class="form-select" aria-label="Default select example" id="status">
+                                            <option value="Selesai">Selesai</option>
+                                            <option value="Belum Selesai">Belum Selesai</option>
+                                          </select>
                                       </div>
                                       <div class="col-md-6">
-                                          <label class="form-label">Jenis Perawatan</label>
-                                          <select class="form-select" aria-label="Default select example" id="perawatan">
-                                              <option value="Konsultasi">Konsultasi</option>
-                                              <option value="Tambal Gigi">Tambal Gigi</option>
-                                              <option value="Cabut Gigi">Cabut Gigi</option>
-                                              <option value="Pembersihan Gigi">Pembersihan Gigi</option>
-                                            </select>
+                                          <label class="form-label">Alamat</label>
+                                          <textarea name="" id="alamat" class="form-control"></textarea>
                                       </div>
                                       <div class="col-12">
                                           <button type="submit" class="btn btn-primary">Submit</button>
@@ -308,7 +307,8 @@
                                               <th>Nama</th>
                                               <th>No Telpon</th>
                                               <th>Email</th>
-                                              <th>Tanggal Kunjungan</th>
+                                              <th>Perawatan</th>
+                                              <th>Status</th>
                                               <th>Action</th>
                                           </tr>
                                       </thead>
@@ -341,8 +341,8 @@
             <!-- partial:partials/_footer.html -->
             <footer class="footer">
               <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2025. All rights reserved Raffa Yuda Pratama.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Made with ⭐</span>
               </div>
             </footer>
             <!-- partial -->
@@ -370,6 +370,6 @@
     <script src="assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
 
-    <script src="dokter.js"></script>
+    <script src="pasien.js"></script>
   </body>
 </html>

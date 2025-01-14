@@ -2,7 +2,7 @@
 let visitors = [
     {
         id: 1,
-        name: 'Herman Beck',
+        name: 'Agus Boday',
         phone: '08889623663',
         email: 'raffa@gmail.com',
         visitDate: '2025-05-15',
@@ -105,9 +105,9 @@ function viewVisitor(id) {
             <dt class="col-sm-4">Waktu Kunjungan</dt>
             <dd class="col-sm-8">${visitor.waktu}</dd>
 
-            <dt class="col-sm-4">Waktu Kunjungan</dt>
+            <dt class="col-sm-4">Jenis Perawatan</dt>
             <dd class="col-sm-8">${visitor.perawatan}</dd>
-            </dl>
+        </dl>
     `;
     viewModal.show();
 }
@@ -119,6 +119,8 @@ function editVisitor(id) {
     document.getElementById('phone').value = visitor.phone;
     document.getElementById('email').value = visitor.email;
     document.getElementById('visitDate').value = visitor.visitDate;
+    document.getElementById('waktu').value = visitor.waktu; // Add this line
+    document.getElementById('perawatan').value = visitor.perawatan; // Add this line
     showForm();
 }
 
