@@ -788,6 +788,11 @@ video {
   max-height: 0px;
 }
 
+.max-h-fit {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
 .w-12 {
   width: 3rem;
 }

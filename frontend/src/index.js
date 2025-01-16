@@ -127,17 +127,6 @@ Object.entries(ELEMENTS.buttons).forEach(([key, button]) => {
 
 
 
-// Navbar
-
-
-const menuButton = document.getElementById('menuButton');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-menuButton.addEventListener('click', function() {
-  mobileMenu.classList.toggle('active');
-});
-
-
 // Ubah teks
 const teksElement = document.getElementById('change-teks');
     const teksArray = ['Untuk senyum Anda', 'Kunjungi kami sekarang!', 'Dengan teknologi terkini'];
