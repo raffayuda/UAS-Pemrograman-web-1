@@ -8,7 +8,16 @@ let visitors = [
         perawatan: 'Cabut Gigi',
         alamat: 'Bogor Jawa Barat',
         status: 'Selesai',
-    }
+    },
+    {
+        id: 2,
+        name: 'Marko Simic',
+        phone: '08889623663',
+        email: 'raffa@gmail.com',
+        perawatan: 'Cabut Gigi',
+        alamat: 'Bogor Jawa Barat',
+        status: 'Belum Selesai',
+    },
 ];
 
 // DOM Elements
@@ -25,7 +34,9 @@ function renderTable() {
             <td>${visitor.phone}</td>
             <td>${visitor.email}</td>
             <td>${visitor.perawatan}</td>
-            <td>${visitor.status}</td>
+            <td>
+                <div align="center" style="background-color: ${visitor.status === 'Selesai' ? '#3dd6bf' : 'red'}; padding: 5px; border-radius: 5px;">${visitor.status}</div>
+            </td>
             <td>
                 <button onclick="viewVisitor(${visitor.id})" class="btn btn-info btn-sm">
                     <i class="fa-solid fa-eye"></i>
