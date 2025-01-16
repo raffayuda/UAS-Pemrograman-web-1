@@ -224,7 +224,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="booking.html">
+              <a class="nav-link" onclick="logout()" style="cursor: pointer;">
                 <span class="menu-title">Logout</span>
                 <i class="fa-solid fa-right-from-bracket menu-icon"></i>
               </a>
@@ -371,5 +371,22 @@
     <!-- End custom js for this page -->
 
     <script src="pasien.js"></script>
+
+    <script>
+      // Check if user is logged in
+      function checkAuth() {
+          if (!localStorage.getItem('isLoggedIn')) {
+              window.location.href = '/index.html';
+          }
+      }
+
+      function logout() {
+          localStorage.removeItem('isLoggedIn');
+          window.location.href = '../../frontend/pages/login.html';
+      }
+
+      // Check auth when page loads
+      checkAuth();
+  </script>
   </body>
 </html>
