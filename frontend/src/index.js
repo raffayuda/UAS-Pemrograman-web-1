@@ -1,4 +1,3 @@
-
 const ELEMENTS = {
   buttons: {
     tombol1: document.getElementById('tombol1'),
@@ -14,16 +13,22 @@ const ELEMENTS = {
       card2: document.getElementById('card-title-2'),
       card3: document.getElementById('card-title-3')
     },
-    // Add references to image elements
     images: {
       img1: document.getElementById('card-img-1'),
       img2: document.getElementById('card-img-2'),
       img3: document.getElementById('card-img-3')
+    },
+    prices: {
+      price1: document.getElementById('price-1'),
+      price2: document.getElementById('price-2'),
+      price3: document.getElementById('price-3'),
+      note1: document.getElementById('note-1'),
+      note2: document.getElementById('note-2'),
+      note3: document.getElementById('note-3')
     }
   }
 };
 
-// Content configuration for each tab including image URLs
 const TAB_CONTENT = {
   tombol1: {
     title: 'Transformasi Senyum Anda dengan Bedah Mulut',
@@ -33,6 +38,20 @@ const TAB_CONTENT = {
       'images/bedah-gigi-1.jpg',
       'images/bedah-gigi-2.jpg',
       'images/bedah-gigi-3.jpg'
+    ],
+    prices: [
+      {
+        mainPrice: 'Mulai dari Rp 2.500.000',
+        note: '*Harga dapat bervariasi tergantung tingkat kesulitan'
+      },
+      {
+        mainPrice: 'Mulai dari Rp 15.000.000',
+        note: '*Termasuk konsultasi dan perawatan selama 1 tahun'
+      },
+      {
+        mainPrice: 'Mulai dari Rp 1.800.000',
+        note: '*Harga tergantung tingkat keparahan infeksi'
+      }
     ]
   },
   tombol2: {
@@ -43,6 +62,20 @@ const TAB_CONTENT = {
       'images/veneer-1.jpg',
       'images/veneer-2.jpg',
       'images/veneer-3.jpg'
+    ],
+    prices: [
+      {
+        mainPrice: 'Mulai dari Rp 500.000',
+        note: '*Termasuk konsultasi dan rencana perawatan'
+      },
+      {
+        mainPrice: 'Mulai dari Rp 2.000.000/gigi',
+        note: '*Harga tergantung jenis veneer yang dipilih'
+      },
+      {
+        mainPrice: 'Mulai dari Rp 300.000',
+        note: '*Per sesi perawatan'
+      }
     ]
   },
   tombol3: {
@@ -53,6 +86,20 @@ const TAB_CONTENT = {
       'images/akar-1.jpg',
       'images/akar-2.png',
       'images/akar-3.jpg'
+    ],
+    prices: [
+      {
+        mainPrice: 'Mulai dari Rp 300.000',
+        note: '*Termasuk rontgen dan konsultasi'
+      },
+      {
+        mainPrice: 'Mulai dari Rp 2.500.000',
+        note: '*Harga per saluran akar'
+      },
+      {
+        mainPrice: 'Mulai dari Rp 1.000.000',
+        note: '*Tergantung jenis restorasi yang diperlukan'
+      }
     ]
   },
   tombol4: {
@@ -63,10 +110,23 @@ const TAB_CONTENT = {
       'images/scaling-1.jpg',
       'images/scaling-2.jpg',
       'images/scaling-3.jpg'
+    ],
+    prices: [
+      {
+        mainPrice: 'Mulai dari Rp 350.000',
+        note: '*Per sesi pembersihan'
+      },
+      {
+        mainPrice: 'Mulai dari Rp 250.000',
+        note: '*Per sesi polishing'
+      },
+      {
+        mainPrice: 'Mulai dari Rp 200.000',
+        note: '*Termasuk aplikasi fluoride'
+      }
     ]
   }
 };
-
 
 // Function to update button styles
 function updateButtonStyles(activeButton) {
@@ -96,6 +156,19 @@ function updateContent(contentKey) {
   content.cards.forEach((cardTitle, index) => {
     if (cardElements[index]) {
       cardElements[index].innerHTML = cardTitle;
+    }
+  });
+  
+  // Update prices and notes
+  content.prices.forEach((price, index) => {
+    const priceElement = ELEMENTS.content.prices[`price${index + 1}`];
+    const noteElement = ELEMENTS.content.prices[`note${index + 1}`];
+    
+    if (priceElement) {
+      priceElement.innerHTML = price.mainPrice;
+    }
+    if (noteElement) {
+      noteElement.innerHTML = price.note;
     }
   });
   
