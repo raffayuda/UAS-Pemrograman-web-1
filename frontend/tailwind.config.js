@@ -19,6 +19,7 @@ module.exports = {
       'card-pink': '#ffc9af',
       'gradient-lokasi-green' : '#85c38d',
       'gradient-lokasi-blue' : '#2fb6c0',
+      'ijo': '#14cbc5'
     },
     fontFamily: {
       'caveat': ['Caveat', 'sans-serif'],
