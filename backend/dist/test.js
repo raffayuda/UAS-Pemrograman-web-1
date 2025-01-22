@@ -76,7 +76,6 @@ const visitorManager = new VisitorManager();
 // DOM Elements
 const form = document.getElementById('form');
 const visitorTableBody = document.getElementById('visitorTableBody');
-const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
 const searchInput = document.getElementById('searchVisitor');
 
 // Utility Functions
@@ -171,6 +170,17 @@ const renderTable = (visitors = visitorManager.getAllVisitors()) => {
     `).join('');
 };
 
+// Show/Hide Form
+const showForm = () => {
+    document.getElementById('visitorForm').style.display = 'block'; // Tampilkan form
+};
+
+const hideForm = () => {
+    document.getElementById('visitorForm').style.display = 'none'; // Sembunyikan form
+    form.reset(); // Reset form
+    document.getElementById('editId').value = ''; // Hapus ID edit
+};
+
 // Event Handlers
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -204,8 +214,8 @@ const handleSubmit = (e) => {
             showAlert('Jadwal kunjungan berhasil ditambahkan!', 'success');
         }
         
-        renderTable();
-        hideForm();
+        renderTable(); // Perbarui tabel
+        hideForm(); // Sembunyikan form
     } catch (error) {
         showAlert('Terjadi kesalahan saat menyimpan data.', 'danger');
         console.error(error);
@@ -230,12 +240,19 @@ const editVisitor = (id) => {
     const visitor = visitorManager.getVisitor(id);
     if (!visitor) return;
 
-    Object.keys(visitor).forEach(key => {
-        const element = document.getElementById(key);
-        if (element) element.value = visitor[key];
-    });
+    // Isi form dengan data visitor
+    document.getElementById('name').value = visitor.name;
+    document.getElementById('phone').value = visitor.phone;
+    document.getElementById('email').value = visitor.email;
+    document.getElementById('visitDate').value = visitor.visitDate;
+    document.getElementById('waktu').value = visitor.waktu;
+    document.getElementById('perawatan').value = visitor.perawatan;
+    document.getElementById('notes').value = visitor.notes;
 
+    // Set ID edit
     document.getElementById('editId').value = visitor.id;
+
+    // Tampilkan form
     showForm();
 };
 
@@ -270,37 +287,6 @@ const showAlert = (message, type = 'info') => {
     container.insertBefore(alertDiv, container.firstChild);
     
     setTimeout(() => alertDiv.remove(), 5000);
-};
-
-const printDetails = () => {
-    const printContent = document.getElementById('viewModal').querySelector('.modal-body').innerHTML;
-    const printWindow = window.open('', '', 'height=600,width=800');
-    
-    printWindow.document.write(`
-        <html>
-            <head>
-                <title>Detail Kunjungan Pasien</title>
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-                <style>
-                    body { padding: 20px; }
-                    @media print {
-                        .no-print { display: none; }
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="container">
-                    <h4 class="mb-4">Detail Kunjungan Pasien - Klinik Gigi</h4>
-                    ${printContent}
-                    <div class="mt-4 no-print">
-                        <button onclick="window.print()" class="btn btn-primary">Cetak</button>
-                    </div>
-                </div>
-            </body>
-        </html>
-    `);
-    
-    printWindow.document.close();
 };
 
 // Event Listeners
