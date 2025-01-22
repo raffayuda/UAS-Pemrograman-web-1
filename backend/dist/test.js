@@ -76,19 +76,12 @@ const visitorManager = new VisitorManager();
 // DOM Elements
 const form = document.getElementById('form');
 const visitorTableBody = document.getElementById('visitorTableBody');
-const searchInput = document.getElementById('searchVisitor');
+const alertContainer = document.getElementById('alertContainer');
 
 // Utility Functions
 const formatDate = (dateString) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('id-ID', options);
-};
-
-const formatTime = (dateString) => {
-    return new Date(dateString).toLocaleTimeString('id-ID', { 
-        hour: '2-digit', 
-        minute: '2-digit' 
-    });
 };
 
 const getStatusBadge = (status) => {
@@ -99,31 +92,6 @@ const getStatusBadge = (status) => {
         'Dalam Proses': 'bg-warning'
     };
     return `<span class="badge ${badges[status] || 'bg-secondary'}">${status}</span>`;
-};
-
-// Form Validation
-const validateForm = (formData) => {
-    const errors = [];
-    
-    if (!formData.name.match(/^[a-zA-Z\s]{3,50}$/)) {
-        errors.push('Nama harus berupa huruf dan minimal 3 karakter');
-    }
-    
-    if (!formData.phone.match(/^([0-9]{10,13})$/)) {
-        errors.push('Nomor telepon harus valid (10-13 digit)');
-    }
-    
-    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-        errors.push('Email tidak valid');
-    }
-    
-    const selectedDate = new Date(formData.visitDate);
-    const today = new Date();
-    if (selectedDate < today) {
-        errors.push('Tanggal kunjungan tidak boleh kurang dari hari ini');
-    }
-
-    return errors;
 };
 
 // Render Functions
@@ -172,13 +140,13 @@ const renderTable = (visitors = visitorManager.getAllVisitors()) => {
 
 // Show/Hide Form
 const showForm = () => {
-    document.getElementById('visitorForm').style.display = 'block'; // Tampilkan form
+    document.getElementById('visitorForm').style.display = 'block';
 };
 
 const hideForm = () => {
-    document.getElementById('visitorForm').style.display = 'none'; // Sembunyikan form
-    form.reset(); // Reset form
-    document.getElementById('editId').value = ''; // Hapus ID edit
+    document.getElementById('visitorForm').style.display = 'none';
+    form.reset();
+    document.getElementById('editId').value = '';
 };
 
 // Event Handlers
@@ -195,52 +163,31 @@ const handleSubmit = (e) => {
         notes: document.getElementById('notes').value.trim()
     };
 
-    const errors = validateForm(formData);
-    
-    if (errors.length > 0) {
-        const errorList = errors.map(error => `<li>${error}</li>`).join('');
-        showAlert(`<ul class="mb-0">${errorList}</ul>`, 'danger');
-        return;
-    }
-
     const editId = document.getElementById('editId').value;
     
     try {
         if (editId) {
+            // Update existing visitor
             visitorManager.updateVisitor(parseInt(editId), formData);
             showAlert('Data kunjungan berhasil diperbarui!', 'success');
         } else {
+            // Add new visitor
             visitorManager.addVisitor(formData);
             showAlert('Jadwal kunjungan berhasil ditambahkan!', 'success');
         }
         
-        renderTable(); // Perbarui tabel
-        hideForm(); // Sembunyikan form
+        renderTable();
+        hideForm();
     } catch (error) {
         showAlert('Terjadi kesalahan saat menyimpan data.', 'danger');
         console.error(error);
     }
 };
 
-const viewVisitor = (id) => {
-    const visitor = visitorManager.getVisitor(id);
-    if (!visitor) return;
-
-    document.getElementById('modalPatientName').textContent = visitor.name;
-    document.getElementById('modalPatientId').textContent = `ID: P${visitor.id.toString().padStart(5, '0')}`;
-    document.getElementById('modalVisitDate').textContent = formatDate(visitor.visitDate);
-    document.getElementById('modalVisitTime').textContent = visitor.waktu;
-    document.getElementById('modalTreatment').textContent = visitor.perawatan;
-    document.getElementById('modalNotes').textContent = visitor.notes || '-';
-
-    viewModal.show();
-};
-
 const editVisitor = (id) => {
     const visitor = visitorManager.getVisitor(id);
     if (!visitor) return;
 
-    // Isi form dengan data visitor
     document.getElementById('name').value = visitor.name;
     document.getElementById('phone').value = visitor.phone;
     document.getElementById('email').value = visitor.email;
@@ -248,56 +195,66 @@ const editVisitor = (id) => {
     document.getElementById('waktu').value = visitor.waktu;
     document.getElementById('perawatan').value = visitor.perawatan;
     document.getElementById('notes').value = visitor.notes;
-
-    // Set ID edit
     document.getElementById('editId').value = visitor.id;
 
-    // Tampilkan form
     showForm();
 };
 
 const deleteVisitor = (id) => {
-    Swal.fire({
-        title: 'Hapus Jadwal?',
-        text: "Data yang dihapus tidak dapat dikembalikan!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#3085d6',
-        confirmButtonText: 'Ya, Hapus!',
-        cancelButtonText: 'Batal'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            visitorManager.deleteVisitor(id);
-            renderTable();
-            showAlert('Data kunjungan berhasil dihapus!', 'success');
-        }
-    });
+    if (confirm('Apakah Anda yakin ingin menghapus data kunjungan ini?')) {
+        visitorManager.deleteVisitor(id);
+        renderTable();
+        showAlert('Data kunjungan berhasil dihapus!', 'success');
+    }
 };
 
-const showAlert = (message, type = 'info') => {
+const showAlert = (message, type) => {
     const alertDiv = document.createElement('div');
     alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+    alertDiv.role = 'alert';
     alertDiv.innerHTML = `
         ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     `;
-    
-    const container = document.querySelector('.card-body');
-    container.insertBefore(alertDiv, container.firstChild);
-    
-    setTimeout(() => alertDiv.remove(), 5000);
+    alertContainer.innerHTML = '';
+    alertContainer.appendChild(alertDiv);
+
+    setTimeout(() => {
+        alertDiv.classList.remove('show');
+        alertDiv.classList.add('fade');
+    }, 5000);
+};
+
+const viewVisitor = (id) => {
+    const visitor = visitorManager.getVisitor(id);
+    if (!visitor) return;
+
+    // Tampilkan detail visitor dalam modal
+    const visitorDetail = `
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">${visitor.name}</h5>
+                <p class="card-text"><strong>Telepon:</strong> ${visitor.phone}</p>
+                <p class="card-text"><strong>Email:</strong> ${visitor.email}</p>
+                <p class="card-text"><strong>Tanggal Kunjungan:</strong> ${formatDate(visitor.visitDate)}</p>
+                <p class="card-text"><strong>Waktu:</strong> ${visitor.waktu}</p>
+                <p class="card-text"><strong>Perawatan:</strong> ${visitor.perawatan}</p>
+                <p class="card-text"><strong>Catatan:</strong> ${visitor.notes}</p>
+                <p class="card-text"><strong>Status:</strong> ${getStatusBadge(visitor.status)}</p>
+            </div>
+        </div>
+    `;
+
+    // Isi konten modal dengan detail visitor
+    document.getElementById('visitorDetailContent').innerHTML = visitorDetail;
+
+    // Tampilkan modal
+    const visitorDetailModal = new bootstrap.Modal(document.getElementById('visitorDetailModal'));
+    visitorDetailModal.show();
 };
 
 // Event Listeners
 form.addEventListener('submit', handleSubmit);
 
-if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-        const searchResults = visitorManager.searchVisitors(e.target.value);
-        renderTable(searchResults);
-    });
-}
-
-// Initialize
+// Initial Render
 renderTable();

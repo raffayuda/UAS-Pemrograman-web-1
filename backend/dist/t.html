@@ -1,0 +1,344 @@
+<div class="content-wrapper">
+    <div class="page-header row">
+        <div class="row mb-3">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                    <i class="fas fa-tooth"></i>
+                </span>Manajemen Jadwal Perawatan Gigi
+            </h3>
+        </div>
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <!-- Alert Container -->
+                        <div id="alertContainer"></div>
+
+                        <!-- Header dan Tombol Tambah -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="card-title text-primary">Jadwal Kunjungan Pasien</h4>
+                            <button class="btn btn-primary btn-sm rounded-pill" onclick="showForm()">
+                                <i class="fas fa-plus-circle me-1"></i> Tambah Jadwal Baru
+                            </button>
+                        </div>
+
+                        <!-- Form Pendaftaran Kunjungan -->
+                        <div id="visitorForm" class="mb-4 bg-light p-4 rounded shadow-sm" style="display: none;">
+                            <h5 class="text-primary mb-3"><i class="fas fa-calendar-plus me-2"></i>Form Pendaftaran Kunjungan</h5>
+                            <form id="form" class="row g-3">
+                                <input type="hidden" id="editId">
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label"><i class="fas fa-user me-1"></i>Nama Lengkap Pasien</label>
+                                    <input type="text" class="form-control rounded-pill" id="name" placeholder="Masukkan nama lengkap" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label"><i class="fas fa-phone me-1"></i>No. Telepon</label>
+                                    <input type="tel" class="form-control rounded-pill" id="phone" placeholder="Contoh: 0812xxxxxxxx" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label"><i class="fas fa-envelope me-1"></i>Email</label>
+                                    <input type="email" class="form-control rounded-pill" id="email" placeholder="contoh@email.com" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label"><i class="fas fa-calendar me-1"></i>Tanggal Kunjungan</label>
+                                    <input type="date" class="form-control rounded-pill" id="visitDate" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label"><i class="fas fa-clock me-1"></i>Waktu Kunjungan</label>
+                                    <select class="form-select rounded-pill" id="waktu" required>
+                                        <option value="">Pilih waktu kunjungan</option>
+                                        <option value="09:00 - 10:30">09:00 - 10:30</option>
+                                        <option value="10:30 - 12:00">10:30 - 12:00</option>
+                                        <option value="13:30 - 15:00">13:30 - 15:00</option>
+                                        <option value="15:00 - 16:30">15:00 - 16:30</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label"><i class="fas fa-list-alt me-1"></i>Jenis Perawatan</label>
+                                    <select class="form-select rounded-pill" id="perawatan" required>
+                                        <option value="">Pilih jenis perawatan</option>
+                                        <option value="Konsultasi Umum">Konsultasi Umum</option>
+                                        <option value="Pemeriksaan Gigi Rutin">Pemeriksaan Gigi Rutin</option>
+                                        <option value="Pembersihan Karang Gigi">Pembersihan Karang Gigi</option>
+                                        <option value="Tambal Gigi">Tambal Gigi</option>
+                                        <option value="Cabut Gigi">Cabut Gigi</option>
+                                        <option value="Perawatan Saluran Akar">Perawatan Saluran Akar</option>
+                                        <option value="Pemasangan Behel">Pemasangan Behel</option>
+                                        <option value="Perawatan Gigi Anak">Perawatan Gigi Anak</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label"><i class="fas fa-notes-medical me-1"></i>Catatan Khusus</label>
+                                    <textarea class="form-control rounded" id="notes" rows="3" placeholder="Contoh: Riwayat alergi, kondisi khusus, dll"></textarea>
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button type="button" class="btn btn-light rounded-pill me-2" onclick="hideForm()">
+                                        <i class="fas fa-times me-1"></i>Batal
+                                    </button>
+                                    <button type="submit" class="btn btn-primary rounded-pill">
+                                        <i class="fas fa-save me-1"></i>Simpan Jadwal
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Tabel Jadwal Kunjungan -->
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th class="rounded-start">#</th>
+                                        <th><i class="fas fa-user me-1"></i>Nama Pasien</th>
+                                        <th><i class="fas fa-calendar-day me-1"></i>Tanggal</th>
+                                        <th><i class="fas fa-tooth me-1"></i>Perawatan</th>
+                                        <th><i class="fas fa-info-circle me-1"></i>Status</th>
+                                        <th class="rounded-end"><i class="fas fa-cog me-1"></i>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="visitorTableBody">
+                                    <!-- Data akan diisi melalui JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Data Management
+    class VisitorManager {
+        constructor() {
+            this.visitors = JSON.parse(localStorage.getItem('dentalVisitors')) || [
+                {
+                    id: 1,
+                    name: 'Agus Boday',
+                    phone: '08889623663',
+                    email: 'raffa@gmail.com',
+                    visitDate: '2025-05-15',
+                    waktu: '09:00 - 10:30',
+                    perawatan: 'Cabut Gigi',
+                    notes: 'Pasien dengan riwayat diabetes',
+                    status: 'Terjadwal'
+                }
+            ];
+        }
+
+        saveToLocalStorage() {
+            localStorage.setItem('dentalVisitors', JSON.stringify(this.visitors));
+        }
+
+        addVisitor(visitor) {
+            const newId = this.visitors.length > 0 ? Math.max(...this.visitors.map(v => v.id)) + 1 : 1;
+            const newVisitor = { 
+                id: newId, 
+                ...visitor,
+                status: 'Terjadwal',
+                createdAt: new Date().toISOString()
+            };
+            this.visitors.push(newVisitor);
+            this.saveToLocalStorage();
+            return newVisitor;
+        }
+
+        updateVisitor(id, updatedData) {
+            const index = this.visitors.findIndex(v => v.id === parseInt(id));
+            if (index !== -1) {
+                this.visitors[index] = { 
+                    ...this.visitors[index], 
+                    ...updatedData,
+                    updatedAt: new Date().toISOString()
+                };
+                this.saveToLocalStorage();
+                return this.visitors[index];
+            }
+            return null;
+        }
+
+        deleteVisitor(id) {
+            this.visitors = this.visitors.filter(v => v.id !== id);
+            this.saveToLocalStorage();
+        }
+
+        getVisitor(id) {
+            return this.visitors.find(v => v.id === id);
+        }
+
+        getAllVisitors() {
+            return this.visitors;
+        }
+
+        searchVisitors(query) {
+            query = query.toLowerCase();
+            return this.visitors.filter(visitor => 
+                visitor.name.toLowerCase().includes(query) ||
+                visitor.email.toLowerCase().includes(query) ||
+                visitor.phone.includes(query)
+            );
+        }
+    }
+
+    // Initialize Visitor Manager
+    const visitorManager = new VisitorManager();
+
+    // DOM Elements
+    const form = document.getElementById('form');
+    const visitorTableBody = document.getElementById('visitorTableBody');
+    const alertContainer = document.getElementById('alertContainer');
+
+    // Utility Functions
+    const formatDate = (dateString) => {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString('id-ID', options);
+    };
+
+    const getStatusBadge = (status) => {
+        const badges = {
+            'Terjadwal': 'bg-primary',
+            'Selesai': 'bg-success',
+            'Dibatalkan': 'bg-danger',
+            'Dalam Proses': 'bg-warning'
+        };
+        return `<span class="badge ${badges[status] || 'bg-secondary'}">${status}</span>`;
+    };
+
+    // Render Functions
+    const renderTable = (visitors = visitorManager.getAllVisitors()) => {
+        visitorTableBody.innerHTML = visitors.map((visitor, index) => `
+            <tr>
+                <td>${index + 1}</td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-sm me-2">
+                            <div class="avatar-title rounded-circle bg-primary">
+                                ${visitor.name.charAt(0)}
+                            </div>
+                        </div>
+                        <div>
+                            <div class="fw-bold">${visitor.name}</div>
+                            <small class="text-muted">${visitor.phone}</small>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div>${formatDate(visitor.visitDate)}</div>
+                    <small class="text-muted">${visitor.waktu}</small>
+                </td>
+                <td>
+                    <div class="fw-bold">${visitor.perawatan}</div>
+                    <small class="text-muted">Dokter ${visitor.doctor || 'Belum ditentukan'}</small>
+                </td>
+                <td>${getStatusBadge(visitor.status)}</td>
+                <td>
+                    <div class="btn-group">
+                        <button onclick="viewVisitor(${visitor.id})" class="btn btn-info btn-sm" title="Lihat Detail">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button onclick="editVisitor(${visitor.id})" class="btn btn-warning btn-sm" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button onclick="deleteVisitor(${visitor.id})" class="btn btn-danger btn-sm" title="Hapus">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+    };
+
+    // Show/Hide Form
+    const showForm = () => {
+        document.getElementById('visitorForm').style.display = 'block';
+    };
+
+    const hideForm = () => {
+        document.getElementById('visitorForm').style.display = 'none';
+        form.reset();
+        document.getElementById('editId').value = '';
+    };
+
+    // Event Handlers
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('name').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            visitDate: document.getElementById('visitDate').value,
+            waktu: document.getElementById('waktu').value,
+            perawatan: document.getElementById('perawatan').value,
+            notes: document.getElementById('notes').value.trim()
+        };
+
+        const editId = document.getElementById('editId').value;
+        
+        try {
+            if (editId) {
+                // Update existing visitor
+                visitorManager.updateVisitor(parseInt(editId), formData);
+                showAlert('Data kunjungan berhasil diperbarui!', 'success');
+            } else {
+                // Add new visitor
+                visitorManager.addVisitor(formData);
+                showAlert('Jadwal kunjungan berhasil ditambahkan!', 'success');
+            }
+            
+            renderTable();
+            hideForm();
+        } catch (error) {
+            showAlert('Terjadi kesalahan saat menyimpan data.', 'danger');
+            console.error(error);
+        }
+    };
+
+    const editVisitor = (id) => {
+        const visitor = visitorManager.getVisitor(id);
+        if (!visitor) return;
+
+        document.getElementById('name').value = visitor.name;
+        document.getElementById('phone').value = visitor.phone;
+        document.getElementById('email').value = visitor.email;
+        document.getElementById('visitDate').value = visitor.visitDate;
+        document.getElementById('waktu').value = visitor.waktu;
+        document.getElementById('perawatan').value = visitor.perawatan;
+        document.getElementById('notes').value = visitor.notes;
+        document.getElementById('editId').value = visitor.id;
+
+        showForm();
+    };
+
+    const deleteVisitor = (id) => {
+        if (confirm('Apakah Anda yakin ingin menghapus data kunjungan ini?')) {
+            visitorManager.deleteVisitor(id);
+            renderTable();
+            showAlert('Data kunjungan berhasil dihapus!', 'success');
+        }
+    };
+
+    const showAlert = (message, type) => {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+        alertDiv.role = 'alert';
+        alertDiv.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+        alertContainer.innerHTML = '';
+        alertContainer.appendChild(alertDiv);
+
+        setTimeout(() => {
+            alertDiv.classList.remove('show');
+            alertDiv.classList.add('fade');
+        }, 5000);
+    };
+
+    // Event Listeners
+    form.addEventListener('submit', handleSubmit);
+
+    // Initial Render
+    renderTable();
+</script>

@@ -234,6 +234,10 @@
                     <div class="col-12 grid-margin stretch-card">
                         <div class="card shadow">
                             <div class="card-body">
+                                <!-- Alert Container -->
+                                <div id="alertContainer"></div>
+        
+                                <!-- Header dan Tombol Tambah -->
                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                     <h4 class="card-title text-primary">Jadwal Kunjungan Pasien</h4>
                                     <button class="btn btn-primary btn-sm rounded-pill" onclick="showForm()">
@@ -241,7 +245,7 @@
                                     </button>
                                 </div>
         
-                                <!-- Form -->
+                                <!-- Form Pendaftaran Kunjungan -->
                                 <div id="visitorForm" class="mb-4 bg-light p-4 rounded shadow-sm" style="display: none;">
                                     <h5 class="text-primary mb-3"><i class="fas fa-calendar-plus me-2"></i>Form Pendaftaran Kunjungan</h5>
                                     <form id="form" class="row g-3">
@@ -301,7 +305,7 @@
                                     </form>
                                 </div>
         
-                                <!-- Table -->
+                                <!-- Tabel Jadwal Kunjungan -->
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead class="bg-primary text-white">
@@ -327,61 +331,24 @@
         </div>
         
         <!-- View Modal -->
-        <div class="modal fade" id="viewModal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title"><i class="fas fa-info-circle me-2"></i>Detail Kunjungan</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="border rounded-circle p-3 bg-light me-3">
-                                <i class="fas fa-user fa-2x text-primary"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-1" id="modalPatientName">Nama Pasien</h5>
-                                <p class="text-muted mb-0" id="modalPatientId">ID: P12345</p>
-                            </div>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="border rounded p-3">
-                                    <small class="text-muted d-block">Tanggal Kunjungan</small>
-                                    <span id="modalVisitDate" class="fw-bold"></span>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="border rounded p-3">
-                                    <small class="text-muted d-block">Waktu</small>
-                                    <span id="modalVisitTime" class="fw-bold"></span>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="border rounded p-3">
-                                    <small class="text-muted d-block">Jenis Perawatan</small>
-                                    <span id="modalTreatment" class="fw-bold"></span>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="border rounded p-3">
-                                    <small class="text-muted d-block">Catatan</small>
-                                    <span id="modalNotes" class="fw-bold"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">
-                            <i class="fas fa-times me-1"></i>Tutup
-                        </button>
-                        <button type="button" class="btn btn-primary rounded-pill" onclick="printDetails()">
-                            <i class="fas fa-print me-1"></i>Cetak
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Modal untuk View Detail -->
+<!-- Modal untuk Detail Visitor -->
+<div class="modal fade" id="visitorDetailModal" tabindex="-1" aria-labelledby="visitorDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="visitorDetailModalLabel">Detail Kunjungan Pasien</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="visitorDetailContent">
+              <!-- Detail visitor akan diisi di sini -->
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          </div>
+      </div>
+  </div>
+</div>
         
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
