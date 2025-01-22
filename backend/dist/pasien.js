@@ -1,147 +1,282 @@
-// Initial data
-let visitors = [
-    {
-        id: 1,
-        name: 'Agus Boday',
-        phone: '08889623663',
-        email: 'raffa@gmail.com',
-        perawatan: 'Cabut Gigi',
-        alamat: 'Bogor Jawa Barat',
-        status: 'Selesai',
-    },
-    {
-        id: 2,
-        name: 'Marko Simic',
-        phone: '08889623663',
-        email: 'raffa@gmail.com',
-        perawatan: 'Cabut Gigi',
-        alamat: 'Bogor Jawa Barat',
-        status: 'Belum Selesai',
-    },
-];
+// Data Management
+class PatientManager {
+    constructor() {
+        this.patients = JSON.parse(localStorage.getItem('dentalPatients')) || [
+            {
+                id: 1,
+                name: 'Vincent',
+                phone: '08121234567',
+                email: 'vincent@klinik.com',
+                perawatan: 'Konsultasi',
+                status: 'Selesai',
+                alamat: 'Jl. babengket No. 123, Bogor',
+                createdAt: new Date().toISOString()
+            },
+            {
+                id: 2,
+                name: 'Siregar',
+                phone: '08889623663',
+                email: 'siregar@klinik.com',
+                perawatan: 'Cabut Gigi',
+                status: 'Selesai',
+                alamat: 'Jl. margonda No. 123, Depok',
+                createdAt: new Date().toISOString()
+            },
+        ];
+    }
+
+    saveToLocalStorage() {
+        localStorage.setItem('dentalPatients', JSON.stringify(this.patients));
+    }
+
+    addPatient(patient) {
+        const newId = this.patients.length > 0 ? Math.max(...this.patients.map(p => p.id)) + 1 : 1;
+        const newPatient = { 
+            id: newId, 
+            ...patient,
+            createdAt: new Date().toISOString()
+        };
+        this.patients.push(newPatient);
+        this.saveToLocalStorage();
+        return newPatient;
+    }
+
+    updatePatient(id, updatedData) {
+        const index = this.patients.findIndex(p => p.id === parseInt(id));
+        if (index !== -1) {
+            this.patients[index] = { 
+                ...this.patients[index], 
+                ...updatedData,
+                updatedAt: new Date().toISOString()
+            };
+            this.saveToLocalStorage();
+            return this.patients[index];
+        }
+        return null;
+    }
+
+    deletePatient(id) {
+        this.patients = this.patients.filter(p => p.id !== id);
+        this.saveToLocalStorage();
+    }
+
+    getPatient(id) {
+        return this.patients.find(p => p.id === id);
+    }
+
+    getAllPatients() {
+        return this.patients;
+    }
+
+    searchPatients(query, status = '') {
+        return this.patients.filter(patient => {
+            const matchesQuery = query.toLowerCase().split(' ').every(term =>
+                patient.name.toLowerCase().includes(term) ||
+                patient.email.toLowerCase().includes(term) ||
+                patient.perawatan.toLowerCase().includes(term)
+            );
+            
+            const matchesStatus = !status || 
+                patient.status === status;
+
+            return matchesQuery && matchesStatus;
+        });
+    }
+}
+
+// Initialize Patient Manager
+const patientManager = new PatientManager();
 
 // DOM Elements
 const form = document.getElementById('form');
-const visitorTableBody = document.getElementById('visitorTableBody');
-const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+const patientTableBody = document.getElementById('visitorTableBody');
+const searchInput = document.getElementById('searchPatient');
+const filterStatus = document.getElementById('filterStatus');
 
-// Render table
-function renderTable() {
-    visitorTableBody.innerHTML = visitors.map((visitor, index) => `
+// Form Validation
+const validateForm = (formData) => {
+    const errors = [];
+    
+    if (!formData.name.match(/^[a-zA-Z\s.]{3,50}$/)) {
+        errors.push('Nama harus berupa huruf dan minimal 3 karakter');
+    }
+    
+    if (!formData.phone.match(/^([0-9]{10,13})$/)) {
+        errors.push('Nomor telepon harus valid (10-13 digit)');
+    }
+    
+    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        errors.push('Email tidak valid');
+    }
+
+    if (!formData.perawatan) {
+        errors.push('Perawatan harus dipilih');
+    }
+
+    if (!formData.status) {
+        errors.push('Status harus dipilih');
+    }
+
+    return errors;
+};
+
+// Render Functions
+const renderTable = (patients = patientManager.getAllPatients()) => {
+    patientTableBody.innerHTML = patients.map((patient, index) => `
         <tr>
             <td>${index + 1}</td>
-            <td>${visitor.name}</td>
-            <td>${visitor.phone}</td>
-            <td>${visitor.email}</td>
-            <td>${visitor.perawatan}</td>
+            <td>${patient.name}</td>
+            <td>${patient.phone}</td>
+            <td>${patient.email}</td>
+            <td>${patient.perawatan}</td>
             <td>
-                <div align="center" style="background-color: ${visitor.status === 'Selesai' ? '#3dd6bf' : 'red'}; padding: 5px; border-radius: 5px;">${visitor.status}</div>
+                <span class="badge ${patient.status === 'Selesai' ? 'bg-success' : 'bg-warning'}">
+                    ${patient.status}
+                </span>
             </td>
-            <td>
-                <button onclick="viewVisitor(${visitor.id})" class="btn btn-info btn-sm">
-                    <i class="fa-solid fa-eye"></i>
+            <td class="text-center">
+                <button class="btn btn-sm btn-outline-info me-1" onclick="viewPatient(${patient.id})">
+                    <i class="fas fa-eye"></i>
                 </button>
-                <button onclick="editVisitor(${visitor.id})" class="btn btn-warning btn-sm">
-                    <i class="fa-solid fa-pen-to-square"></i>
+                <button class="btn btn-sm btn-outline-primary me-1" onclick="editPatient(${patient.id})">
+                    <i class="fas fa-edit"></i>
                 </button>
-                <button onclick="deleteVisitor(${visitor.id})" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-trash"></i>
+                <button class="btn btn-sm btn-outline-danger" onclick="deletePatient(${patient.id})">
+                    <i class="fas fa-trash"></i>
                 </button>
             </td>
         </tr>
     `).join('');
-}
+};
 
-// Format date
-function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('en-US', options);
-}
-
-// Show/Hide form
-function showForm() {
+// Show/Hide Form
+const showForm = () => {
     document.getElementById('visitorForm').style.display = 'block';
-}
+};
 
-function hideForm() {
+const hideForm = () => {
     document.getElementById('visitorForm').style.display = 'none';
     form.reset();
     document.getElementById('editId').value = '';
-}
+};
 
-// CRUD Operations
-form.addEventListener('submit', function(e) {
+// Handle Form Submission
+form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const formData = {
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
         perawatan: document.getElementById('perawatan').value,
-        alamat: document.getElementById('alamat').value,
-        status: document.getElementById('status').value
+        status: document.getElementById('status').value,
+        alamat: document.getElementById('alamat').value
     };
 
-    const editId = document.getElementById('editId').value;
-    
-    if (editId) {
-        // Update
-        const index = visitors.findIndex(v => v.id === parseInt(editId));
-        visitors[index] = { ...visitors[index], ...formData };
-    } else {
-        // Create
-        const newId = visitors.length > 0 ? Math.max(...visitors.map(v => v.id)) + 1 : 1;
-        visitors.push({ id: newId, ...formData });
+    const errors = validateForm(formData);
+    if (errors.length > 0) {
+        alert(errors.join('\n'));
+        return;
     }
 
-    renderTable();
-    hideForm();
+    const editId = document.getElementById('editId').value;
+    if (editId) {
+        // Update existing patient
+        const updatedPatient = patientManager.updatePatient(editId, formData);
+        if (updatedPatient) {
+            alert('Data pasien berhasil diperbarui!');
+            renderTable();
+            hideForm();
+        }
+    } else {
+        // Add new patient
+        const newPatient = patientManager.addPatient(formData);
+        if (newPatient) {
+            alert('Data pasien berhasil ditambahkan!');
+            renderTable();
+            hideForm();
+        }
+    }
 });
 
-function viewVisitor(id) {
-    const visitor = visitors.find(v => v.id === id);
-    document.getElementById('viewModalBody').innerHTML = `
-        <dl class="row">
-            <dt class="col-sm-4">Nama</dt>
-            <dd class="col-sm-8">${visitor.name}</dd>
-            
-            <dt class="col-sm-4">No Telpon</dt>
-            <dd class="col-sm-8">${visitor.phone}</dd>
-            
-            <dt class="col-sm-4">Email</dt>
-            <dd class="col-sm-8">${visitor.email}</dd>
-            
-            <dt class="col-sm-4">Perawatan</dt>
-            <dd class="col-sm-8">${visitor.perawatan}</dd>
-
-            <dt class="col-sm-4">Alamat</dt>
-            <dd class="col-sm-8">${visitor.alamat}</dd>
-
-            <dt class="col-sm-4">Status</dt>
-            <dd class="col-sm-8">${visitor.status}</dd>
-        </dl>
-    `;
-    viewModal.show();
-}
-
-function editVisitor(id) {
-    const visitor = visitors.find(v => v.id === id);
-    document.getElementById('editId').value = visitor.id;
-    document.getElementById('name').value = visitor.name;
-    document.getElementById('phone').value = visitor.phone;
-    document.getElementById('email').value = visitor.email;
-    document.getElementById('perawatan').value = visitor.perawatan;
-    document.getElementById('alamat').value = visitor.alamat; // Add this line
-    document.getElementById('status').value = visitor.status; // Add this line
-    showForm();
-}
-
-function deleteVisitor(id) {
-    if (confirm('Are you sure you want to delete this visitor?')) {
-        visitors = visitors.filter(v => v.id !== id);
-        renderTable();
+// Edit Patient
+const editPatient = (id) => {
+    const patient = patientManager.getPatient(id);
+    if (patient) {
+        document.getElementById('editId').value = patient.id;
+        document.getElementById('name').value = patient.name;
+        document.getElementById('phone').value = patient.phone;
+        document.getElementById('email').value = patient.email;
+        document.getElementById('perawatan').value = patient.perawatan;
+        document.getElementById('status').value = patient.status;
+        document.getElementById('alamat').value = patient.alamat;
+        showForm();
     }
-}
+};
 
-// Initial render
+// Delete Patient
+const deletePatient = (id) => {
+    if (confirm('Apakah Anda yakin ingin menghapus data pasien ini?')) {
+        patientManager.deletePatient(id);
+        renderTable();
+        alert('Data pasien berhasil dihapus!');
+    }
+};
+
+// View Patient Details
+const viewPatient = (id) => {
+    const patient = patientManager.getPatient(id);
+    if (patient) {
+        const modalBody = document.getElementById('viewModalBody');
+        modalBody.innerHTML = `
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Nama:</strong></p>
+                    <p><strong>No. Telepon:</strong></p>
+                    <p><strong>Email:</strong></p>
+                    <p><strong>Perawatan:</strong></p>
+                    <p><strong>Status:</strong></p>
+                    <p><strong>Alamat:</strong></p>
+                </div>
+                <div class="col-md-6">
+                    <p>${patient.name}</p>
+                    <p>${patient.phone}</p>
+                    <p>${patient.email}</p>
+                    <p>${patient.perawatan}</p>
+                    <p><span class="badge ${patient.status === 'Selesai' ? 'bg-success' : 'bg-warning'}">
+                        ${patient.status}
+                    </span></p>
+                    <p>${patient.alamat}</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <p><strong>Dibuat Pada:</strong> ${new Date(patient.createdAt).toLocaleString()}</p>
+                    ${patient.updatedAt ? `<p><strong>Diperbarui Pada:</strong> ${new Date(patient.updatedAt).toLocaleString()}</p>` : ''}
+                </div>
+            </div>
+        `;
+
+        // Tampilkan modal
+        const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+        viewModal.show();
+    }
+};
+
+// Search and Filter
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    const status = filterStatus.value;
+    const filteredPatients = patientManager.searchPatients(query, status);
+    renderTable(filteredPatients);
+});
+
+filterStatus.addEventListener('change', () => {
+    const query = searchInput.value.trim();
+    const status = filterStatus.value;
+    const filteredPatients = patientManager.searchPatients(query, status);
+    renderTable(filteredPatients);
+});
+
+// Initial Render
 renderTable();

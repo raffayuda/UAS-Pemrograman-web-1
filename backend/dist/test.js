@@ -1,135 +1,317 @@
-// Initial data
-let visitors = [
-    {
-        id: 1,
-        name: 'Agus Boday',
-        phone: '08889623663',
-        email: 'raffa@gmail.com',
-        visitDate: '2025-05-15',
-        waktu: '08:00 - 10:00',
-        perawatan: 'Cabut Gigi',
+// Data Management
+class VisitorManager {
+    constructor() {
+        this.visitors = JSON.parse(localStorage.getItem('dentalVisitors')) || [
+            {
+                id: 1,
+                name: 'Agus Boday',
+                phone: '08889623663',
+                email: 'raffa@gmail.com',
+                visitDate: '2025-05-15',
+                waktu: '09:00 - 10:30',
+                perawatan: 'Cabut Gigi',
+                notes: 'Pasien dengan riwayat diabetes',
+                status: 'Terjadwal'
+            }
+        ];
     }
-];
+
+    saveToLocalStorage() {
+        localStorage.setItem('dentalVisitors', JSON.stringify(this.visitors));
+    }
+
+    addVisitor(visitor) {
+        const newId = this.visitors.length > 0 ? Math.max(...this.visitors.map(v => v.id)) + 1 : 1;
+        const newVisitor = { 
+            id: newId, 
+            ...visitor,
+            status: 'Terjadwal',
+            createdAt: new Date().toISOString()
+        };
+        this.visitors.push(newVisitor);
+        this.saveToLocalStorage();
+        return newVisitor;
+    }
+
+    updateVisitor(id, updatedData) {
+        const index = this.visitors.findIndex(v => v.id === parseInt(id));
+        if (index !== -1) {
+            this.visitors[index] = { 
+                ...this.visitors[index], 
+                ...updatedData,
+                updatedAt: new Date().toISOString()
+            };
+            this.saveToLocalStorage();
+            return this.visitors[index];
+        }
+        return null;
+    }
+
+    deleteVisitor(id) {
+        this.visitors = this.visitors.filter(v => v.id !== id);
+        this.saveToLocalStorage();
+    }
+
+    getVisitor(id) {
+        return this.visitors.find(v => v.id === id);
+    }
+
+    getAllVisitors() {
+        return this.visitors;
+    }
+
+    searchVisitors(query) {
+        query = query.toLowerCase();
+        return this.visitors.filter(visitor => 
+            visitor.name.toLowerCase().includes(query) ||
+            visitor.email.toLowerCase().includes(query) ||
+            visitor.phone.includes(query)
+        );
+    }
+}
+
+// Initialize Visitor Manager
+const visitorManager = new VisitorManager();
 
 // DOM Elements
 const form = document.getElementById('form');
 const visitorTableBody = document.getElementById('visitorTableBody');
 const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+const searchInput = document.getElementById('searchVisitor');
 
-// Render table
-function renderTable() {
+// Utility Functions
+const formatDate = (dateString) => {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('id-ID', options);
+};
+
+const formatTime = (dateString) => {
+    return new Date(dateString).toLocaleTimeString('id-ID', { 
+        hour: '2-digit', 
+        minute: '2-digit' 
+    });
+};
+
+const getStatusBadge = (status) => {
+    const badges = {
+        'Terjadwal': 'bg-primary',
+        'Selesai': 'bg-success',
+        'Dibatalkan': 'bg-danger',
+        'Dalam Proses': 'bg-warning'
+    };
+    return `<span class="badge ${badges[status] || 'bg-secondary'}">${status}</span>`;
+};
+
+// Form Validation
+const validateForm = (formData) => {
+    const errors = [];
+    
+    if (!formData.name.match(/^[a-zA-Z\s]{3,50}$/)) {
+        errors.push('Nama harus berupa huruf dan minimal 3 karakter');
+    }
+    
+    if (!formData.phone.match(/^([0-9]{10,13})$/)) {
+        errors.push('Nomor telepon harus valid (10-13 digit)');
+    }
+    
+    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        errors.push('Email tidak valid');
+    }
+    
+    const selectedDate = new Date(formData.visitDate);
+    const today = new Date();
+    if (selectedDate < today) {
+        errors.push('Tanggal kunjungan tidak boleh kurang dari hari ini');
+    }
+
+    return errors;
+};
+
+// Render Functions
+const renderTable = (visitors = visitorManager.getAllVisitors()) => {
     visitorTableBody.innerHTML = visitors.map((visitor, index) => `
         <tr>
             <td>${index + 1}</td>
-            <td>${visitor.name}</td>
-            <td>${visitor.phone}</td>
-            <td>${visitor.email}</td>
-            <td>${formatDate(visitor.visitDate)}</td>
             <td>
-                <button onclick="viewVisitor(${visitor.id})" class="btn btn-info btn-sm">
-                    <i class="fa-solid fa-eye"></i>
-                </button>
-                <button onclick="editVisitor(${visitor.id})" class="btn btn-warning btn-sm">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button onclick="deleteVisitor(${visitor.id})" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-sm me-2">
+                        <div class="avatar-title rounded-circle bg-primary">
+                            ${visitor.name.charAt(0)}
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fw-bold">${visitor.name}</div>
+                        <small class="text-muted">${visitor.phone}</small>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div>${formatDate(visitor.visitDate)}</div>
+                <small class="text-muted">${visitor.waktu}</small>
+            </td>
+            <td>
+                <div class="fw-bold">${visitor.perawatan}</div>
+                <small class="text-muted">Dokter ${visitor.doctor || 'Belum ditentukan'}</small>
+            </td>
+            <td>${getStatusBadge(visitor.status)}</td>
+            <td>
+                <div class="btn-group">
+                    <button onclick="viewVisitor(${visitor.id})" class="btn btn-info btn-sm" title="Lihat Detail">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <button onclick="editVisitor(${visitor.id})" class="btn btn-warning btn-sm" title="Edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button onclick="deleteVisitor(${visitor.id})" class="btn btn-danger btn-sm" title="Hapus">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
             </td>
         </tr>
     `).join('');
-}
+};
 
-// Format date
-function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('en-US', options);
-}
-
-// Show/Hide form
-function showForm() {
-    document.getElementById('visitorForm').style.display = 'block';
-}
-
-function hideForm() {
-    document.getElementById('visitorForm').style.display = 'none';
-    form.reset();
-    document.getElementById('editId').value = '';
-}
-
-// CRUD Operations
-form.addEventListener('submit', function(e) {
+// Event Handlers
+const handleSubmit = (e) => {
     e.preventDefault();
     
     const formData = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
+        name: document.getElementById('name').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim(),
         visitDate: document.getElementById('visitDate').value,
         waktu: document.getElementById('waktu').value,
-        perawatan: document.getElementById('perawatan').value
+        perawatan: document.getElementById('perawatan').value,
+        notes: document.getElementById('notes').value.trim()
     };
+
+    const errors = validateForm(formData);
+    
+    if (errors.length > 0) {
+        const errorList = errors.map(error => `<li>${error}</li>`).join('');
+        showAlert(`<ul class="mb-0">${errorList}</ul>`, 'danger');
+        return;
+    }
 
     const editId = document.getElementById('editId').value;
     
-    if (editId) {
-        // Update
-        const index = visitors.findIndex(v => v.id === parseInt(editId));
-        visitors[index] = { ...visitors[index], ...formData };
-    } else {
-        // Create
-        const newId = visitors.length > 0 ? Math.max(...visitors.map(v => v.id)) + 1 : 1;
-        visitors.push({ id: newId, ...formData });
-    }
-
-    renderTable();
-    hideForm();
-});
-
-function viewVisitor(id) {
-    const visitor = visitors.find(v => v.id === id);
-    document.getElementById('viewModalBody').innerHTML = `
-        <dl class="row">
-            <dt class="col-sm-4">Nama</dt>
-            <dd class="col-sm-8">${visitor.name}</dd>
-            
-            <dt class="col-sm-4">No Telpon</dt>
-            <dd class="col-sm-8">${visitor.phone}</dd>
-            
-            <dt class="col-sm-4">Email</dt>
-            <dd class="col-sm-8">${visitor.email}</dd>
-            
-            <dt class="col-sm-4">Tanggal Kunjungan</dt>
-            <dd class="col-sm-8">${formatDate(visitor.visitDate)}</dd>
-
-            <dt class="col-sm-4">Waktu Kunjungan</dt>
-            <dd class="col-sm-8">${visitor.waktu}</dd>
-
-            <dt class="col-sm-4">Jenis Perawatan</dt>
-            <dd class="col-sm-8">${visitor.perawatan}</dd>
-        </dl>
-    `;
-    viewModal.show();
-}
-
-function editVisitor(id) {
-    const visitor = visitors.find(v => v.id === id);
-    document.getElementById('editId').value = visitor.id;
-    document.getElementById('name').value = visitor.name;
-    document.getElementById('phone').value = visitor.phone;
-    document.getElementById('email').value = visitor.email;
-    document.getElementById('visitDate').value = visitor.visitDate;
-    document.getElementById('waktu').value = visitor.waktu; // Add this line
-    document.getElementById('perawatan').value = visitor.perawatan; // Add this line
-    showForm();
-}
-
-function deleteVisitor(id) {
-    if (confirm('Are you sure you want to delete this visitor?')) {
-        visitors = visitors.filter(v => v.id !== id);
+    try {
+        if (editId) {
+            visitorManager.updateVisitor(parseInt(editId), formData);
+            showAlert('Data kunjungan berhasil diperbarui!', 'success');
+        } else {
+            visitorManager.addVisitor(formData);
+            showAlert('Jadwal kunjungan berhasil ditambahkan!', 'success');
+        }
+        
         renderTable();
+        hideForm();
+    } catch (error) {
+        showAlert('Terjadi kesalahan saat menyimpan data.', 'danger');
+        console.error(error);
     }
+};
+
+const viewVisitor = (id) => {
+    const visitor = visitorManager.getVisitor(id);
+    if (!visitor) return;
+
+    document.getElementById('modalPatientName').textContent = visitor.name;
+    document.getElementById('modalPatientId').textContent = `ID: P${visitor.id.toString().padStart(5, '0')}`;
+    document.getElementById('modalVisitDate').textContent = formatDate(visitor.visitDate);
+    document.getElementById('modalVisitTime').textContent = visitor.waktu;
+    document.getElementById('modalTreatment').textContent = visitor.perawatan;
+    document.getElementById('modalNotes').textContent = visitor.notes || '-';
+
+    viewModal.show();
+};
+
+const editVisitor = (id) => {
+    const visitor = visitorManager.getVisitor(id);
+    if (!visitor) return;
+
+    Object.keys(visitor).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) element.value = visitor[key];
+    });
+
+    document.getElementById('editId').value = visitor.id;
+    showForm();
+};
+
+const deleteVisitor = (id) => {
+    Swal.fire({
+        title: 'Hapus Jadwal?',
+        text: "Data yang dihapus tidak dapat dikembalikan!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, Hapus!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            visitorManager.deleteVisitor(id);
+            renderTable();
+            showAlert('Data kunjungan berhasil dihapus!', 'success');
+        }
+    });
+};
+
+const showAlert = (message, type = 'info') => {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+    alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    
+    const container = document.querySelector('.card-body');
+    container.insertBefore(alertDiv, container.firstChild);
+    
+    setTimeout(() => alertDiv.remove(), 5000);
+};
+
+const printDetails = () => {
+    const printContent = document.getElementById('viewModal').querySelector('.modal-body').innerHTML;
+    const printWindow = window.open('', '', 'height=600,width=800');
+    
+    printWindow.document.write(`
+        <html>
+            <head>
+                <title>Detail Kunjungan Pasien</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+                <style>
+                    body { padding: 20px; }
+                    @media print {
+                        .no-print { display: none; }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h4 class="mb-4">Detail Kunjungan Pasien - Klinik Gigi</h4>
+                    ${printContent}
+                    <div class="mt-4 no-print">
+                        <button onclick="window.print()" class="btn btn-primary">Cetak</button>
+                    </div>
+                </div>
+            </body>
+        </html>
+    `);
+    
+    printWindow.document.close();
+};
+
+// Event Listeners
+form.addEventListener('submit', handleSubmit);
+
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        const searchResults = visitorManager.searchVisitors(e.target.value);
+        renderTable(searchResults);
+    });
 }
 
-// Initial render
+// Initialize
 renderTable();

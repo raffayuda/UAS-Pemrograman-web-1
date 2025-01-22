@@ -2,108 +2,130 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Boday Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="assets/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/ti-icons/css/themify-icons.css"
+    />
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css" />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/font-awesome/css/font-awesome.min.css"
+    />
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <link
+      rel="stylesheet"
+      href="assets/vendors/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css"
+    />
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <style>
       @media (max-width: 768px) {
-          .content-wrapper {
-              padding: 15px;
-          }
-          
-          .card {
-              margin: 0;
-          }
-          
-          .card-body {
-              padding: 15px;
-          }
-          
-          .table-responsive {
-              margin: 0 -15px;
-              width: calc(100% + 30px);
-          }
-          
-          .table td, .table th {
-              white-space: nowrap;
-              min-width: 100px;
-          }
-          
-          .modal-dialog {
-              margin: 10px;
-              max-width: 98%;
-          }
-          
-          .form-control, .form-select {
-              font-size: 16px;
-              height: auto;
-              padding: 10px;
-          }
-          
-          .btn {
-              padding: 8px 16px;
-              font-size: 14px;
-          }
-          
-          .page-title {
-              font-size: 1.5rem;
-          }
-          
-          .card-title {
-              font-size: 1.25rem;
-          }
+        .content-wrapper {
+          padding: 15px;
+        }
+
+        .card {
+          margin: 0;
+        }
+
+        .card-body {
+          padding: 15px;
+        }
+
+        .table-responsive {
+          margin: 0 -15px;
+          width: calc(100% + 30px);
+        }
+
+        .table td,
+        .table th {
+          white-space: nowrap;
+          min-width: 100px;
+        }
+
+        .modal-dialog {
+          margin: 10px;
+          max-width: 98%;
+        }
+
+        .form-control,
+        .form-select {
+          font-size: 16px;
+          height: auto;
+          padding: 10px;
+        }
+
+        .btn {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+
+        .page-title {
+          font-size: 1.5rem;
+        }
+
+        .card-title {
+          font-size: 1.25rem;
+        }
       }
-      
+
       /* Additional improvements for very small screens */
       @media (max-width: 576px) {
-          .content-wrapper {
-              padding: 10px;
-          }
-          
-          .card-body {
-              padding: 10px;
-          }
-          
-          .modal-body {
-              padding: 15px;
-          }
-          
-          .btn {
-              width: 50%;
-              margin-bottom: 5px;
-          }
-          
-          .modal-footer {
-              flex-direction: column;
-          }
-          
-          .modal-footer .btn {
-              width: 100%;
-              margin: 5px 0;
-          }
+        .content-wrapper {
+          padding: 10px;
+        }
+
+        .card-body {
+          padding: 10px;
+        }
+
+        .modal-body {
+          padding: 15px;
+        }
+
+        .btn {
+          width: 50%;
+          margin-bottom: 5px;
+        }
+
+        .modal-footer {
+          flex-direction: column;
+        }
+
+        .modal-footer .btn {
+          width: 100%;
+          margin: 5px 0;
+        }
       }
-      </style>
+    </style>
   </head>
   <body>
     <div class="container-scroller">
-      
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
@@ -128,114 +150,22 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src="assets/images/faces/face1.jpg" alt="image">
+                  <img src="logo.png" alt="image" class="border bg-primary">
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
                   <p class="mb-1 text-black">Admin</p>
                 </div>
               </a>
-              <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
-              </div>
+              
             </li>
             <li class="nav-item d-none d-lg-block full-screen-link">
               <a class="nav-link">
                 <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-email-outline"></i>
-                <span class="count-symbol bg-warning"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <h6 class="p-3 mb-0">Messages</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face4.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-                    <p class="text-gray mb-0"> 1 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face2.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-                    <p class="text-gray mb-0"> 15 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face3.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-                    <p class="text-gray mb-0"> 18 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">4 new messages</h6>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count-symbol bg-danger"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <h6 class="p-3 mb-0">Notifications</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="mdi mdi-calendar"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
-                    <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="mdi mdi-cog"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
-                    <p class="text-gray ellipsis mb-0"> Update dashboard </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="mdi mdi-link-variant"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
-                    <p class="text-gray ellipsis mb-0"> New admin wow! </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">See all notifications</h6>
-              </div>
-            </li>
+            
+            
             <li class="nav-item nav-logout d-none d-lg-block">
               <a class="nav-link" href="#">
                 <i class="mdi mdi-power"></i>
@@ -260,7 +190,7 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="assets/images/faces/face1.jpg" alt="profile" />
+                  <img src="logo.png" alt="profile" class="border bg-primary"/>
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
@@ -313,119 +243,178 @@
         </nav>
         <!-- partial -->
         <div class="main-panel">
-            <div class="content-wrapper">
-              <div class="page-header row">
-                  <div class="row mb-3">
-                      <h3 class="page-title">
+          <div class="content-wrapper">
+            <div class="page-header row">
+                <div class="row mb-3">
+                    <h3 class="page-title">
                         <span class="page-title-icon bg-gradient-primary text-white me-2">
-                          <i class="mdi mdi-home"></i>
+                            <i class="mdi mdi-account-multiple"></i>
                         </span>Manajemen Pasien
-                      </h3>
-                  </div>
+                    </h3>
+                </div>
                 <div class="row">
-                  <div class="col-lg-12 grid-margin stretch-card">
-                      <div class="card">
-                          <div class="card-body">
-                              <div class="d-flex justify-content-between align-items-center mb-4">
-                                  <h4 class="card-title">Pasien</h4>
-                                  <button class="btn btn-success btn-sm" onclick="showForm()">
-                                      <i class="fa-solid fa-user-plus"></i>
-                                  </button>
-                              </div>
-              
-                              <!-- Form -->
-                              <div id="visitorForm" class="mb-4" style="display: none;">
-                                  <form id="form" class="row g-3">
-                                      <input type="hidden" id="editId">
-                                      <div class="col-md-6">
-                                          <label class="form-label">Nama</label>
-                                          <input type="text" class="form-control" id="name" required>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <label class="form-label">No Telpon</label>
-                                          <input type="tel" class="form-control" id="phone" required>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <label class="form-label">Email</label>
-                                          <input type="email" class="form-control" id="email" required>
-                                      </div>
-                                      
-                                      <div class="col-md-6">
-                                        <label class="form-label">Perawatan</label>
-                                        <select class="form-select" aria-label="Default select example" id="perawatan">
-                                          <option value="Konsultasi">Konsultasi</option>
-                                          <option value="Tambal Gigi">Tambal Gigi</option>
-                                          <option value="Cabut Gigi">Cabut Gigi</option>
-                                          <option value="Pembersihan Gigi">Pembersihan Gigi</option>
-                                        </select>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <label class="form-label">Status</label>
-                                          <select class="form-select" aria-label="Default select example" id="status">
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div>
+                                        <h4 class="card-title text-primary mb-1">Data Pasien</h4>
+                                        <p class="text-muted small mb-0">Kelola informasi pasien klinik gigi</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm rounded-pill" onclick="showForm()">
+                                        <i class="fas fa-plus-circle me-1"></i> Tambah Pasien
+                                    </button>
+                                </div>
+        
+                                <!-- Search and Filter -->
+                                <div class="row mb-4">
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-white border-end-0">
+                                                <i class="fas fa-search text-primary"></i>
+                                            </span>
+                                            <input type="text" class="form-control border-start-0" id="searchPatient" 
+                                                   placeholder="Cari pasien...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-select" id="filterStatus">
+                                            <option value="">Semua Status</option>
                                             <option value="Selesai">Selesai</option>
                                             <option value="Belum Selesai">Belum Selesai</option>
-                                          </select>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <label class="form-label">Alamat</label>
-                                          <textarea name="" id="alamat" class="form-control"></textarea>
-                                      </div>
-                                      <div class="col-12">
-                                          <button type="submit" class="btn btn-primary">Submit</button>
-                                          <button type="button" class="btn btn-secondary" onclick="hideForm()">Cancel</button>
-                                      </div>
-                                  </form>
-                              </div>
-              
-                              <!-- Table -->
-                              <div class="table-responsive">
-                                  <table class="table table-striped">
-                                      <thead>
-                                          <tr>
-                                              <th>#</th>
-                                              <th>Nama</th>
-                                              <th>No Telpon</th>
-                                              <th>Email</th>
-                                              <th>Perawatan</th>
-                                              <th>Status</th>
-                                              <th>Action</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody id="visitorTableBody">
-                                      </tbody>
-                                  </table>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              
-                  <!-- View Modal -->
-                  <div class="modal fade" id="viewModal" tabindex="-1">
-                      <div class="modal-dialog">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <h5 class="modal-title">Visitor Details</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                              </div>
-                              <div class="modal-body" id="viewModalBody">
-                              </div>
-                          </div>
-                      </div>
+                                        </select>
+                                    </div>
+                                </div>
+        
+                                <!-- Form -->
+                                <div id="visitorForm" class="mb-4 bg-light p-4 rounded shadow-sm" style="display: none;">
+                                    <h5 class="text-primary mb-3">
+                                        <i class="fas fa-user me-2"></i>Form Data Pasien
+                                    </h5>
+                                    <form id="form" class="row g-3">
+                                        <input type="hidden" id="editId">
+                                        <div class="col-md-6">
+                                            <label class="form-label">
+                                                <i class="fas fa-user me-1"></i>Nama Lengkap
+                                            </label>
+                                            <input type="text" class="form-control rounded-pill" id="name" 
+                                                   placeholder="Masukkan nama lengkap" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">
+                                                <i class="fas fa-phone me-1"></i>No. Telepon
+                                            </label>
+                                            <input type="tel" class="form-control rounded-pill" id="phone" 
+                                                   placeholder="Contoh: 0812xxxxxxxx" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">
+                                                <i class="fas fa-envelope me-1"></i>Email
+                                            </label>
+                                            <input type="email" class="form-control rounded-pill" id="email" 
+                                                   placeholder="contoh@email.com" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">
+                                                <i class="fas fa-stethoscope me-1"></i>Perawatan
+                                            </label>
+                                            <select class="form-select rounded-pill" id="perawatan" required>
+                                                <option value="">Pilih perawatan</option>
+                                                <option value="Konsultasi">Konsultasi</option>
+                                                <option value="Tambal Gigi">Tambal Gigi</option>
+                                                <option value="Cabut Gigi">Cabut Gigi</option>
+                                                <option value="Pembersihan Gigi">Pembersihan Gigi</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">
+                                                <i class="fas fa-check-circle me-1"></i>Status
+                                            </label>
+                                            <select class="form-select rounded-pill" id="status" required>
+                                                <option value="">Pilih status</option>
+                                                <option value="Selesai">Selesai</option>
+                                                <option value="Belum Selesai">Belum Selesai</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">
+                                                <i class="fas fa-map-marker-alt me-1"></i>Alamat
+                                            </label>
+                                            <textarea class="form-control rounded" id="alamat" rows="3" 
+                                                      placeholder="Masukkan alamat lengkap"></textarea>
+                                        </div>
+                                        <div class="col-12 text-end">
+                                            <button type="button" class="btn btn-light rounded-pill me-2" onclick="hideForm()">
+                                                <i class="fas fa-times me-1"></i>Batal
+                                            </button>
+                                            <button type="submit" class="btn btn-primary rounded-pill">
+                                                <i class="fas fa-save me-1"></i>Simpan Data
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+        
+                                <!-- Table -->
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="bg-primary text-white">
+                                            <tr>
+                                                <th class="rounded-start">#</th>
+                                                <th>Nama</th>
+                                                <th>No. Telepon</th>
+                                                <th>Email</th>
+                                                <th>Perawatan</th>
+                                                <th>Status</th>
+                                                <th class="rounded-end text-center">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="visitorTableBody">
+                                            <!-- Data akan diisi melalui JavaScript -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-              </div>
-              
             </div>
-            <!-- content-wrapper ends -->
-            <!-- partial:partials/_footer.html -->
-            <footer class="footer">
-              <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2025. All rights reserved Raffa Yuda Pratama.</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Made with ⭐</span>
-              </div>
-            </footer>
-            <!-- partial -->
-          </div>
+        
+            <!-- View Modal -->
+            <div class="modal fade" id="viewModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Detail Pasien</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body" id="viewModalBody">
+                            <!-- Detail pasien akan diisi di sini -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div
+              class="d-sm-flex justify-content-center justify-content-sm-between"
+            >
+              <span
+                class="text-muted text-center text-sm-left d-block d-sm-inline-block"
+                >Copyright © 2025. All rights reserved Raffa Yuda Pratama.</span
+              >
+              <span
+                class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"
+                >Made with ⭐</span
+              >
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
@@ -454,18 +443,18 @@
     <script>
       // Check if user is logged in
       function checkAuth() {
-          if (!localStorage.getItem('isLoggedIn')) {
-              window.location.href = '/index.html';
-          }
+        if (!localStorage.getItem("isLoggedIn")) {
+          window.location.href = "/index.html";
+        }
       }
 
       function logout() {
-          localStorage.removeItem('isLoggedIn');
-          window.location.href = '../../frontend/pages/login.html';
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "../../frontend/pages/login.html";
       }
 
       // Check auth when page loads
       checkAuth();
-  </script>
+    </script>
   </body>
 </html>
