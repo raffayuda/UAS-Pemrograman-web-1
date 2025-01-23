@@ -2,10 +2,10 @@
 
 <p>Anggota Kelompok 2 TI08: </p>
 <ul>
-  <li>Raffa Yuda Pratama</li>
-<li>Razan muhamad Ihsan Rismawandi</li>
-<li>Muhammad Zakri Alfiansyah</li>
-<li>Ayu Della Astuti</li>
+  <li>Raffa Yuda Pratama (0110224081)</li>
+<li>Razan muhammad Ihsan Rismawandi (0110224158)</li>
+<li>Muhammad Zakri Alfiansyah (0110224153)</li>
+<li>Ayu Della Astuti (0110224116)</li>
 </ul>
 
 <a href="https://karhud.netlify.app">https://karhud.netlify.app</a>
