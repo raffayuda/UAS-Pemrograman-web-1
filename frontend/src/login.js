@@ -1,15 +1,15 @@
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('errorMessage');
     
     
-    const validEmail = 'admin@gmail.com';
+    const validUserame = 'admin123';
     const validPassword = 'password123';
     
-    if (email === validEmail && password === validPassword) {
+    if (username === validUserame && password === validPassword) {
      
         errorMessage.classList.add('hidden');
         alert('Login successful!');
@@ -19,12 +19,12 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         window.location.href = '../../backend/dist/index.html';
     } else {
         
-        errorMessage.textContent = 'Invalid email or password';
+        errorMessage.textContent = 'Invalid username or password';
         errorMessage.classList.remove('hidden');
     }
 });
 
-document.getElementById('email').addEventListener('input', clearError);
+document.getElementById('username').addEventListener('input', clearError);
 document.getElementById('password').addEventListener('input', clearError);
 
 function clearError() {
