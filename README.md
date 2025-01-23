@@ -16,4 +16,4 @@
   <li>Ayu Della Astuti <a href="https://www.linkedin.com/in/ayu-della-astuti-b6010b335/">https://www.linkedin.com/in/ayu-della-astuti-b6010b335/</a></li>
 </ul>
 
-<a href="https://karhud.netlify.app">https://karhud.netlify.app</a>
+<p>Link Proyek Website Klinik Gigi<a href="https://karhud.netlify.app">https://karhud.netlify.app</a></p>
